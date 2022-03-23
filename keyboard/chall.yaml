@@ -5,7 +5,7 @@ categories:
 value: 100
 flag: bcactf{k3yb0ard_lay0u7_chang3up_qwerty}
 description: >
-I bought a new keyboard, but it looks like it's typing gibberish!
+  I bought a new keyboard, but it looks like it's typing gibberish!
 hints:
   - My keyboard's not broken, I just need to get used to it.
   - It uses a different layout from most keyboards.
