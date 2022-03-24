@@ -6,3 +6,4 @@
 - Don't commit stuff like `node_modules`, compiled binaries, etc.
 - Include a solvepath
 - Send a PR and tag category leads for review
+- Look at [CONTRIBUTING.md](CONTRIBUTING.md) for more information
