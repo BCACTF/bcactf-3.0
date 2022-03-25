@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:client:ts": "tsc -p public/tsconfig.json",
+    "build:client:css": "tailwindcss -c tailwind.config.cjs -i ./public/src/main.css -o ./public/dist/main.css",
     "build:server": "tsc -p server/tsconfig.json"
   },
   "dependencies": {
@@ -12,6 +14,7 @@
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",
+    "@types/micromodal": "^0.3.3",
     "@types/node": "^17.0.23",
     "tailwindcss": "^3.0.23",
     "typescript": "^4.6.3"
