@@ -6,6 +6,7 @@ flag: bcactf{this_is_a_flag}
 # Alternatively:
 # flag:
 #   file: ./flag.txt
+# 
 description: |-
   Look at this example problem.
   This is the problem description.
