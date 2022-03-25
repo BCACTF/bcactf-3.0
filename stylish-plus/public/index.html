@@ -20,13 +20,24 @@
         <button class="thing-that-you-click-on-and-it-does-a-thing mb-4">Report a Problem</button>
         <button class="thing-that-you-click-on-and-it-does-a-thing mb-4" data-micromodal-trigger="admin-modal">Admin Panel</button>
         <div class="modal" id="admin-modal" aria-hidden="true">
-            <div class="modal-backdrop" tabindex="-1" data-micromodal-close>
-                <div class="modal-content" role="dialog" aria-model="true" aria-labelledby="admin-modal-title">
-                    <h2 id="admin-modal-title">Enter passcode to access admin panel</h2>
-                    <button class="thing-that-you-click-on-and-it-does-a-thing" data-micromodal-close="admin-modal">Close</button>
+            <div class="modal-backdrop" tabindex="-1" data-micromodal-close="admin-modal"></div>
+            <div class="modal-content flex justify-center items-center align-center flex-col" role="dialog" aria-model="true" aria-labelledby="admin-modal-title">
+                <h2 id="admin-modal-title">Enter passcode to access admin panel</h2>
+                <div id="admin-passcode-entry" class="flex justify-center items-center align-center flex-col text-center">
+                    <div id="admin-modal-code" class="font-mono leading-10 text-3xl h-10 font-bold mb-4"></div>
+                    <div id="keypad" class="grid grid-cols-3 gap-1"></div>
                 </div>
+                <div id="admin-restricted" class="hidden justify-center items-center align-center text-center mt-4">
+                    <button id="express-approval" class="thing-that-you-click-on-and-it-does-a-thing mr-1">Express Approval</button>
+                    <button id="show-flag" class="thing-that-you-click-on-and-it-does-a-thing">Show Flag</button>
+                </div>
+                <button type="button" class="thing-that-you-click-on-and-it-does-a-thing mt-4"
+                    data-micromodal-close="admin-modal">Close</button>
             </div>
         </div>
+        <template id="keypad-button">
+            <button type="button" class="thing-that-you-click-on-and-it-does-a-thing"></button>
+        </template>
         <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
         <script src="/dist/main.js"></script>
     </body>
