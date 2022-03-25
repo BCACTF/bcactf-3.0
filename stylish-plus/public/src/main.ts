@@ -64,7 +64,7 @@ async function submitPasscode() {
             }),
         });
 
-        if (response.status === 404) {
+        if (response.status === 200) {
             flag = await response.text();
             title.innerText = "Welcome to the Admin Panel";
             document.getElementById("admin-passcode-entry")!.style.display = "none";
