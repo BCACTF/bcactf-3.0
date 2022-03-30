@@ -1,0 +1,33 @@
+ - assumes a starting point of index.html, brownies.html, cupcakes.html
+
+ - click on the hamburger menu on the right (three horizontal bars)
+ 
+ - click on the link that says "Admin"
+ 
+ - notice that we want to login as the admin (it was in the name of the link)
+    - however, the username box is already filled in as Guest
+    - Use the browser DevTools, Inspect > modify the value of the input to "admin"
+ 
+ - Before submitting a password, let's look at what the JS does 
+ 
+ - handleInput() takes our password and encodes it using fancyEncode(), before putting it in a cookie
+ 
+ - the function fancyEncode() takes the charCode of each character in our password and adds the letter "e" as a delimiter
+ 
+ - For now, we don't know what the password is, so let's put in something arbitrary, like "admin" again (anything is fine for now)
+ 
+ - Hit enter, and you are taken to adminEditor.html
+    - The page is blank, so let's open DevTools again
+    - As we can see, the DOM is basically empty, but we have added a new script tag - editor.js 
+    - In the Debugger (Firefox) or Sources (Chromium) Tab we can view the JS again
+    - A single if statement checks if our cookie matches this very long string (clearly encoded by fancyEncode())
+    - if so, it redirects us to ./flag.html 
+
+ - The page of flag.html shows us that we have been deceived, we cannot add recipes without contacting the admin to hardcode them in :(
+     - However, if we inspect the source, we see a handy fancyDecode() function
+     - This decodes and outputs the cookie "pwd" which is currently an incorrect value  
+     - Let's navigate back to adminEditor.html
+     - Here, we can find that super long string and set it as our pwd cookie
+     
+ - navigate back to ./flag.html and we see the flag woohoo!
+
