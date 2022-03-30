@@ -25,6 +25,8 @@ function handleInput() {
 
 }
 
+//dont worry about the intricacies of the setCookie and getCookie functions
+//just understand what they do and how to use them 
 function setCookie(name, value, days) {
     const d = new Date();
     d.setTime(d.getTime() + (days*24*60*60*1000));
@@ -46,6 +48,7 @@ function getCookie(cookiename) {
     }
     return "";
 }
+
 function fancyEncode(str) {
     let newString = "";
     for (i=0;i<=str.length-1;i++) {
