@@ -3,18 +3,17 @@ body {
     font-family: Fredoka, sans-serif;
     margin: 0;
     padding: 0;
-    /* overflow-x: hidden; */
 }
+
 
 #headerimg {
     width: 30%;
     position: relative;
     margin: 0 auto;
     margin-top: 5%;
-    /* padding: 0 37.5%; */
     grid-area: imgcookie;
-
 }
+
 header {
     margin: 0 auto;
     margin-bottom: 10vh;
@@ -31,6 +30,7 @@ header {
     font-family: Indie Flower, cursive;
     font-size: 1.7rem;
 }
+
 h1.headingTop:nth-of-type(2) {
     grid-area: headRight;
     text-align: left;
@@ -48,9 +48,11 @@ h1.headingMid {
     animation: slideHeading 3000ms ease 2.6s both;
 }
 
+
 .subheadingList {
     font-size: 1.75rem;
 }
+
 li {
     position: relative;
     padding: 0 1%;
@@ -64,6 +66,7 @@ li:before {
     text-align: center;
 }
 
+
 main {
     margin: 0 auto;
     display: grid;
@@ -76,9 +79,9 @@ main {
     justify-content: center;
 }
 
+
 #side {
     position: fixed;
-    /* float: right; */
     right: 0;
     z-index: 10;
     height: 100vh;
@@ -86,17 +89,16 @@ main {
     top: 0;
     margin: 0;
     margin-right: 0.5vw;
-    /* border: 3px red solid; */
     padding: 3vw 0;
 }
+
 #side img {
-    /* position: absolute; */
     height: 2.5vw;
     left: 0%;
     top: 3vh;
     margin-right: 10%;
-    /* margin: 5%; */
 }
+
 
 #flyout {
     position: fixed;
@@ -109,39 +111,46 @@ main {
     padding-top: 15vh;
     background-color: #fefffe;
 }
+
 #flyout li {
     list-style-type: none;
     margin: 3vh 2vw;
-    /* margin-left: none; */
-    /* margin-right: 5%; */
     padding: 10%;
     padding-left: 0;
 }
+
 #flyout li a {
     z-index: 10;
     margin: 0;
     padding: 0;
 }
+
 #flyout li::before {
     content: '';
     display: none;
 }
+
+
 ul {
     padding: 0;
     width: 75%;
 }
 
+
 h3 {
     grid-area: sidebar2;
     margin-left: 10%;
 }
+
 h3:first-of-type {
     grid-area: sidebar;
 }
 
+
 ol {
     grid-area: content2;
 }
+
 ol:first-of-type {
     grid-area: content;
 }

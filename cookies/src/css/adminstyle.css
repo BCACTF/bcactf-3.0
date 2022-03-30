@@ -3,8 +3,8 @@ body {
     font-family: Fredoka, sans-serif;
     margin: 0;
     padding: 0;
-    /* overflow-x: hidden; */
 }
+
 
 #headerimg {
     width: 7em;
@@ -12,10 +12,9 @@ body {
     position: relative;
     margin: 0 auto;
     margin-top: 5%;
-    /* padding: 0 37.5%; */
     grid-area: imgcookie;
-
 }
+
 header {
     margin: 0 auto;
     display: grid;
@@ -31,6 +30,7 @@ header {
     font-family: Indie Flower, cursive;
     font-size: 180%;
 }
+
 h1.headingTop:nth-of-type(2) {
     grid-area: headRight;
     text-align: left;
@@ -47,9 +47,11 @@ h1.headingMid {
     animation: slideHeading 3000ms ease 2.6s both;
 }
 
+
 .subheadingList {
     font-size: 1.75rem;
 }
+
 
 #login {
     display: grid;
@@ -59,6 +61,7 @@ h1.headingMid {
     grid-template-columns: 2fr 3fr 2fr;
     grid-template-rows: 6vh 8vh;
 }
+
 #login input {
     width: auto;
     height: 85%;
@@ -66,7 +69,6 @@ h1.headingMid {
     margin-top: 1.5vh;
 }
 #login input:first-of-type {
-    /* top: 50%; */
     margin-top: 0;
     grid-area: content;
 }
