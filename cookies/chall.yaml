@@ -3,7 +3,7 @@ categories:
   - webex
 value: 5
 flag: bcactf{u$ers_s33_c00k!es_7oo_863o4t5}
-description: |-
+description:
   Look I made a website to teach you how to make cookies. 
   There's some other recipes there too, and I made a super secure portal to add more.
 hints:
@@ -12,4 +12,4 @@ hints:
 authors:
   - Mudasir Ali
 visible: true
-# deployed everything in the /src folder
+# deployed [everything in the /src folder]
