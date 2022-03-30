@@ -1,14 +1,13 @@
 name: Cookies
 categories:
   - webex
-value: 0
-#idk if this is too easy or too convoluted
-flag: bcactf{u$ers_s33_c00k!es_7oo}
+value: 5
+flag: bcactf{u$ers_s33_c00k!es_7oo_863o4t5}
 description: |-
   Look I made a website to teach you how to make cookies. 
   There's some other recipes there too, and I made a super secure portal to add more.
 hints:
-  - Look through all the javascript carefully
+  - Look through all the javascript files carefully
   - Cookies can be modified client-side
 authors:
   - Mudasir Ali
