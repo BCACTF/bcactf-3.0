@@ -10,12 +10,10 @@ description: |-
   Or is it?
 hints:
   - There's a lot of text covering the flag; you might want to get rid of that.
-  - Trying all the possible combinations isn't the best way to go.
-  - Notice how all of the paragraphs belong to a specific class.
+  - Perhaps there are a set of particularly relevant letters that you choose which pargraphs to show.
 
-files:
-  - src: ./classy.html
-  - src: ./styles/style.css
+  #TODO: deployment
+
 authors:
   - Jeremy Lee
 visible: true
