@@ -1,0 +1,19 @@
+name: Trivia Party!
+categories:
+  - reverse
+value: 75
+flag: bcactf{TR1VI4_G4ME_C0M9L3T3D_746136}
+
+description: |-
+  Your friends want to test your knowledge!
+  Answer the questions and have fun!
+
+hints:
+  - Google can be a great source of information.
+
+files:
+  - 
+
+authors:
+  - Jacob Berger
+visible: true
