@@ -58,12 +58,13 @@ int main() {
     cin >> question6;
 
     if (question6 == "Chiron") {
-        cout << "Correct! Next Question \n";
+        cout << "Correct! \n";
     }else {
         return 0;
     }
 
     cout << "Here is the flag: bcactf{TR1VI4_G4ME_C0M9L3T3D_746136}";
-
+    string leaveopen;
+    cin >> leaveopen;
     return 0;
 }
