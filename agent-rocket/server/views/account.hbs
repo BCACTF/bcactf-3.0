@@ -1,0 +1,20 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Rocket</title>
+  </head>
+  <body>
+    <h2>Welcome back Admin!</h2>
+    {{#if agent}}
+      <p>Here is your flag: BCACTF{u53r_4g3Nt5_5rE_c0OL}.</p>
+      <p>You should be able to launch the rocket with this.</p>
+    {{else}}
+      <p>Nice to see you working from home again.</p>
+      <p>If you are trying to launch the rocket, try logging in from the control
+        panel.</p>
+    {{/if}}
+    <!-- The name of the device is "BCACTF Rocket Control Panel" in case you forgot. -->
+  </body>
+</html>
