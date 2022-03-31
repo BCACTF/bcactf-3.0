@@ -1,7 +1,7 @@
 name: Password Manager
 categories:
   - Reverse
-value: 10
+value: 50
 flag: bcactf{5ecure_pa55w0rd_23rj13}
 description: |-
   I forgot my password to the password checker which is stored in the password checker which I forgot the password to!
