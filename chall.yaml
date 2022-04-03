@@ -2,7 +2,7 @@ name: Painted Over
 categories:
   - rev
 value:90
-flag: bcactf
+flag: bcactf{b!gG3r_!mg_29354758}
 description: |-
   I created a *new* way to hide images, see if you can reverse it and find the flag.
 hints:
