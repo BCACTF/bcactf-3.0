@@ -21,7 +21,7 @@ async function main() {
             image.bitmap.data[idx] = ((x+y*y) * red) % 255;
             image.bitmap.data[idx+1] = ((x*x+y) * green) % 255;
             image.bitmap.data[idx+2] = ((x+y) * blue) % 255;
-            modded += `X${((x+y*y) * red)}X${((x*x+y) * green)}X${((x+y) * blue)}\n`;
+            modded += `X${((x+y*y) * red)}e${x},${y}X${((x*x+y) * green)}X${((x+y) * blue)}\n`;
         }
 
         if (x % 2 == 0 || y % 4==0) {
