@@ -1,8 +1,0 @@
-- read index.js
-- find out what's happening
-- write some code to reverse it
-    - example: ./solve.js
-- read output
-    - look carefully, as there will still be gridlines
-    - type out the flag
-    
