@@ -1,0 +1,14 @@
+name: Password Manager
+categories:
+  - rev
+value: 50
+flag: bcactf{5ecure_pa55w0rd_23rj13}
+description: |-
+  I forgot my password to the password checker which is stored in the password checker which I forgot the password to!
+  Here's my password checker, can you help me remember the password?
+hints:
+  - How is your input being converted?
+  - Maybe the Dictionary will help.
+authors:
+  - Maxwell Gong
+visible: true
