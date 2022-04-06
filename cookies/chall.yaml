@@ -1,7 +1,7 @@
 name: Cookies
 categories:
   - webex
-value: 5
+value: 75
 flag: bcactf{u$ers_s33_c00k!es_7oo_863o4t5}
 flag_file:
   "/flag.txt"
