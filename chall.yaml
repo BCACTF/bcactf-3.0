@@ -1,0 +1,14 @@
+name: Ghost Game
+categories:
+  - reverse
+value: 80
+flag: bcaCTF{SE3DS_r_SP0O00OKY_7ICI3C}
+description: |-
+  I love classic programs like Ghost Game! This one seems much more difficult though...
+  I heard winning 10 times in a row leads to something good!
+hints:
+  - How do computers generate random numbers?
+authors:
+  - Parth Jain
+visible: true
+# TODO : Deploy "GhostGame - to play.py"
