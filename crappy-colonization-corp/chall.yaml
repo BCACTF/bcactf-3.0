@@ -1,7 +1,6 @@
 name: Crappy Colonization Corp
 categories:
-  - crypto
-  - rev?
+  - cryptO
 value: 96.024
 flag: 
   file: ./flag.txt
