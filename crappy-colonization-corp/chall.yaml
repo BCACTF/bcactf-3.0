@@ -1,11 +1,15 @@
 name: Crappy Colonization Corp
 categories:
-  - cryptO
+  - crypto
 value: 96.024
 flag: 
   file: ./flag.txt
 description: |-
   Yay, we finally got someone to mars!
+
+
+
+  
   It's beaurocracy time!
 hints:
   - Your IGUID is not used as an index into the hashmap. Only the result of the "proprietary algorithm" is used.
