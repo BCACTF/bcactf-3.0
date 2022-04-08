@@ -1,7 +1,7 @@
 name: Crappy Colonization Corp
 categories:
   - crypto
-value: 96.024
+value: 96
 flag: 
   file: ./flag.txt
 description: |-
@@ -9,7 +9,7 @@ description: |-
 
 
 
-  
+
   It's beaurocracy time!
 hints:
   - Your IGUID is not used as an index into the hashmap. Only the result of the "proprietary algorithm" is used.
