@@ -1,0 +1,1 @@
+Map the characters/keys from the Dvorak layout onto the QWERTY layout (or use a tool like http://wbic16.xedoloh.com/dvorak.html).
