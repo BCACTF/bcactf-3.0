@@ -9,7 +9,7 @@ description: |-
   Here's a render of something I made, not exactly sure what it is though.
 hints:
   - Open the image in a text editor
-  - Research about the library used
+  - Research the library used
 files:
   - src: ./chall.png 
 authors:
