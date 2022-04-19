@@ -1,0 +1,17 @@
+name: Blender Creation
+categories:
+  - foren
+  - misc
+value: 150
+flag: bcactf{b13NdR__pXYtH0N_4ND_f0r3N}
+description: |-
+  I'm learning how to use Blender, and if I'm being honest I have no idea what I'm doing.
+  Here's a render of something I made, not exactly sure what it is though.
+hints:
+  - Open the image in a text editor
+  - Research the library used
+files:
+  - src: ./chall.png 
+authors:
+  - Krish
+visible: true
