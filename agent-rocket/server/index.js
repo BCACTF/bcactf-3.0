@@ -9,6 +9,7 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(express.static(__dirname + "/public"));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
@@ -21,8 +22,6 @@ app.post("/", (req, res) => {
   if (username !== "admin" || password !== "password") {
     return res.render("index", { error: true });
   }
-
-  console.log(req.headers["user-agent"]);
 
   if (req.headers["user-agent"] !== "BCACTF Rocket Control Panel") {
     return res.render("account", { agent: false });
