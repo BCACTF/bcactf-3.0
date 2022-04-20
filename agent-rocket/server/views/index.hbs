@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../global.css" />
+    <title>Agent Rocket</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="log-form">
+        <h2 style="text-align: center">Login to your account</h2>
+        <form action="/" method="post">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="username"
+          />
+          <!-- The username should be "admin" -->
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="password"
+          />
+          <!-- The password should be "password" -->
+          <button type="submit" class="btn">Login</button>
+        </form>
+      </div>
+      {{#if error}}
+        <p style="text-align:center; color: red">WOAHH WOAHH WOAHH! YOU AREN'T
+          THE RIGHT PERSON. STOP TRYING TO LOG INTO OUR SUPER SECRET CONTROL
+          PANEL.</p>
+      {{/if}}
+    </div>
+  </body>
+</html>

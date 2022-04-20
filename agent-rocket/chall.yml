@@ -1,0 +1,16 @@
+name: Agent Rocket
+categories:
+  - webex
+value: 100
+flag: BCACTF{u53r_4g3Nt5_5rE_c0OL_1023}
+description: |-
+  I need to launch the BCA CTF ROCKET to the moon!
+  Unfortunately I lost my launch code (flag).
+  You can find the launch code in the control panel.
+hints:
+  - Have you tried looking at the website more CLOSELY?
+  - You can't access the control panel from every device out there.
+authors:
+  - Shay Mor
+visible: true
+# TODO: deployment
