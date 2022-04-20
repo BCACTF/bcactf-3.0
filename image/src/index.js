@@ -11,7 +11,7 @@ async function main() {
         // var blue = image.bitmap.data[idx + 2];
         // var alpha = image.bitmap.data[idx + 3];
         
-        image.bitmap.data[idx+3] = Math.random() * 128;
+        image.bitmap.data[idx+3] = Math.random() * 12;
         image.bitmap.data[idx+2] -= 129;
         image.bitmap.data[idx+1] -= 68;
 
