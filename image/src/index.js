@@ -4,7 +4,6 @@ async function main() {
     const image = await jimp.read('flag.png');
     const width = image.bitmap.width;
     const height = image.bitmap.height;
-    let lowerMoreW = 0;
     
     image.scan(0, 0, width, height, (x, y, idx)=>{
         // var red = image.bitmap.data[idx];
@@ -12,20 +11,9 @@ async function main() {
         // var blue = image.bitmap.data[idx + 2];
         // var alpha = image.bitmap.data[idx + 3];
         
-        if (x % 4 == 0) {
-            image.bitmap.data[idx+3] = 0;
-            lowerMoreW = 2;
-        } else {
-            image.bitmap.data[idx+3] = 150;
-            image.bitmap.data[idx] += 135;
-        }
-        if (lowerMoreW >=0) {
-            image.bitmap.data[idx+3] = 0;
-            lowerMoreW--;
-        }
-        if (y % 3 == 0) {
-            image.bitmap.data[idx+3] = 0;
-        }
+        image.bitmap.data[idx+3] = 0;
+        image.bitmap.data[idx+2] -= 129;
+        image.bitmap.data[idx+1] -= 68;
 
         if (x == image.bitmap.width - 1 && y == image.bitmap.height - 1) {
             image.write("modifiedflag.png");

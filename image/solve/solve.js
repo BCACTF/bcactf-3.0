@@ -7,11 +7,8 @@ async function main() {
 
     image.scan(0, 0, width, height, (x, y, idx)=>{
         image.bitmap.data[idx+3] = 255;
-
-        //optional reversal of colors
-        if (x % 4 != 0) {
-            image.bitmap.data[idx] -= 135;
-        }
+        image.bitmap.data[idx+2] += 129;
+        image.bitmap.data[idx+1] += 68;
 
         if (x == image.bitmap.width - 1 && y == image.bitmap.height - 1) {
             image.write("outputflag.png");
