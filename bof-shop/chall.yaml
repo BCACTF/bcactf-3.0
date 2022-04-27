@@ -1,0 +1,16 @@
+name: BOF Shop
+categories:
+  - binex
+value: 100
+flag:
+  file: ./flag.txt
+description: |-
+  Welcome to the BOF Shop! Get the chance at buying your own flag,
+  all you need to do is get a few coins first! Good luck.
+hints:
+  - What does BOF stand for?
+# todo deploy
+files:
+  - src: src.c
+authors:
+  - Andrew
