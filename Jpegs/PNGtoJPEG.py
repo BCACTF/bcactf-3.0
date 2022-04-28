@@ -1,5 +1,6 @@
 import PIL
 import numpy as np
+from scipy.fftpack import dct
 
 # convert image to a matrix
 

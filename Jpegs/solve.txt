@@ -1,0 +1,9 @@
+Readjust DCT table
+
+Readjust Quantization table
+
+Reapply Quantization table
+
+Repurpose given script
+
+Unblurrify image
