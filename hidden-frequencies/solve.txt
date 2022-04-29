@@ -1,0 +1,6 @@
+1. Open the msg.txt file
+2. Observe that there are many characters repeated many times before going over to a new character
+    - maybe there is something special about how many times they repeat?
+3. Create a script to count how many of each letter there are or throw them into a character frequency analyzer (probably the former)
+4. Notice that the counts of each variable corresponds to a certain ascii value
+5. take the frequency of each char --> ascii and you get the flag
