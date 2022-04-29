@@ -1,4 +1,4 @@
-f = open('hidden-frequencies/msg.txt')
+f = open('msg.txt')
 seen = {}
   
 for line in f:

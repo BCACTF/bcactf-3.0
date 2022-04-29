@@ -1,7 +1,7 @@
 name: Hidden Frequencies
 categories:
   - crypto
-value: 100
+value: 75
 flag: bcactf{ch4r4ct3r_fr3qu3ncy_15_50_c00l_55aFejnb}
 description: |-
   - I downloaded one of my friend's files and he got really defensive... it looks like gibberish but I think there might be more to it.
