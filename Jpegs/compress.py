@@ -1,6 +1,7 @@
 from PIL import Image
 import numpy as np
 import cv2
+import gzip
 np.set_printoptions(suppress=True)
 
 # convert image to a matrix
@@ -33,10 +34,6 @@ dctArr = np.zeros((nHeight, nWidth))
 def dct2(arr):
     return cv2.dct(arr/255)*255
     # return fftpack.dct(fftpack.dct(arr, type=2, axis=0, norm='ortho'), type=2, axis=1, norm='ortho')
-
-def idct2(arr):
-    return cv2.idct(arr/255)*255
-    # return fftpack.idct(fftpack.idct(arr, type=3, axis=0, norm='ortho'), type=3, axis=1, norm='ortho')
 
 # uses DCT
 dctArr = np.zeros((nHeight, nWidth))
@@ -88,7 +85,7 @@ for i in range(0, nHeight, 8):
 # print(result[:512])
 
 # run-length encoding
-
+'''
 compressed = ''
 currChr = result[0]
 count = 0
@@ -102,4 +99,13 @@ for bit in result:
         currChr = bit
 
 # print(compressed)
+'''
+text_file = open("temp.txt", "w")
+text_file.write(f'{nHeight:064b}{nWidth:064b}{result}')
+text_file.close()
 
+f_in = open("temp.txt", "rb")
+f_out = gzip.open('image.txt.gz', 'wb')
+f_out.writelines(f_in)
+f_out.close()
+f_in.close()
