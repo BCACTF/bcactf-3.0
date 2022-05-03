@@ -7,47 +7,40 @@ from scipy import fftpack
 img = Image.open('test.png')
 arr = np.asarray(img)
 
-print(arr)
-print(len(arr)) # vertical
-print(len(arr[0]))
-print(img.size)
+# convert to grayscale
 grayArr = np.zeros((len(arr), len(arr[0])))
 for vert in range(len(arr)):
     for hori in range(len(arr[0])):
         grayArr[vert][hori] = arr[vert][hori][0]
+
+# crops the image
 nHeight = len(grayArr) - len(grayArr) % 8
 nWidth = len(grayArr[0]) - len(grayArr[0]) % 8
-grayArr.resize((nHeight, nWidth), refcheck=False)
-print(grayArr)
+cropArr = np.zeros((nHeight, nWidth)) # resize dumb
+for i in range(0, nHeight):
+    for j in range(0, nWidth):
+        cropArr[i,j] = grayArr[i,j] - 128
+grayArr = cropArr
+# print(grayArr)
 
-# 1d array test
-'''
-test = np.array([1, 2, 3, 4, 5, 6, 7, 8])
-print("original array:", test)
-testdct = fftpack.dct(test, axis=0, norm="ortho")
-print("after dct:", testdct)
-for i in range(len(testdct)):
-    testdct[i] = testdct[i].round()
-print("after rounding:", testdct)
-testidct = fftpack.idct(testdct, axis=0, norm="ortho")
-for i in range(len(testidct)):
-    testidct[i] = testidct[i].round()
-print("after inverse and rounding:", testidct)
-'''
+# defines DCT
+dctArr = np.zeros((nHeight, nWidth))
 
-# perform DCT on it
 def dct2(arr):
     return fftpack.dct(fftpack.dct(arr, axis=0, norm='ortho'), axis=1, norm='ortho')
 
 def idct2(arr):
-    pass
+    return fftpack.idct(fftpack.idct(arr, axis=0, norm='ortho'), axis=1, norm='ortho')
 
+# uses DCT
 dctArr = np.zeros((nHeight, nWidth))
 for i in range(0, nHeight, 8):
     for j in range(0, nWidth, 8):
         dctArr[i:i+8,j:j+8] = dct2(grayArr[i:i+8,j:j+8])
 
-# use the quantization table on it
+print(dctArr)
+
+# thresholds table
 scalar = np.array([16, 11, 10, 16, 24, 40, 51, 61,
                    12, 12, 14, 19, 26, 58, 60, 55,
                    14, 13, 16, 24, 40, 57, 69, 56,
@@ -70,14 +63,24 @@ for i in range(0, nHeight):
 
 print(reduArr)
 
+# scales back threshold
+unreduArr = np.zeros((nHeight, nWidth))
+for i in range(0, nHeight, 8):
+    for j in range(0, nWidth, 8):
+        unreduArr[i:i+8,j:j+8] = np.multiply(reduArr[i:i+8,j:j+8], scalar)
 
-# Read the matrix from top left to bottom right order
-# compress said file
+# uses IDCT
+for i in range(0, nHeight, 8):
+    for j in range(0, nWidth, 8):
+        unreduArr[i:i+8,j:j+8] = idct2(unreduArr[i:i+8,j:j+8])
 
-# make a file containing the image and the quantization table
+# converts back to image
+for i in range(0, nHeight):
+    for j in range(0, nWidth):
+        unreduArr[i,j] += 128
 
-# give the problem solver a library to open the file type
-# uncompress the file
-# undo the quantization
-# use inverse DCT
-# convert back to an image
+print(unreduArr)
+
+endImage = Image.fromarray(unreduArr)
+#print(endImage)
+#endImage.show()
