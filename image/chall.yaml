@@ -1,7 +1,7 @@
 name: Glassed Over
 categories:
   - rev
-value: 85
+value: 75
 flag: bcactf{b!gG3r_!mg_29354758}
 description: |-
   I created a *new* way to hide images, see if you can reverse it and find the flag.
