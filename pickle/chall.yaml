@@ -1,0 +1,15 @@
+name: Pickles
+categories:
+  - rev
+value: 75
+flag: bcactf{p1cKl3d_5h4zD4JaQVUSGi81NBll7}
+description: |-
+  I like pickles. Apparently it's also a thing in programming too.
+hints:
+  - What are pickles? (not the food)
+files:
+  - src: ./data.ctf
+authors:
+  - Krish
+visible: true
+# TODO: deployment
