@@ -44,8 +44,8 @@ for i in range(0, nHeight, 8):
     for j in range(0, nWidth, 8):
         dctArr[i:i+8,j:j+8] = dct2(grayArr[i:i+8,j:j+8])
 
-print("After DCT:")
-print(dctArr[160:168,160:168])
+# print("After DCT:")
+# print(dctArr[160:168,160:168])
 
 # thresholds table
 scalar = np.array([16, 11, 10, 16, 24, 40, 51, 61,
@@ -68,8 +68,8 @@ for i in range(0, nHeight):
     for j in range(0, nWidth):
         reduArr[i,j] = reduArr[i,j].round()
 
-print("After Quantization:")
-#print(reduArr[160:168,160:168])
+# print("After Quantization:")
+print(reduArr[0:17,0:17])
 
 # scales back threshold
 unreduArr = np.zeros((nHeight, nWidth))
@@ -77,8 +77,8 @@ for i in range(0, nHeight, 8):
     for j in range(0, nWidth, 8):
         unreduArr[i:i+8,j:j+8] = np.multiply(reduArr[i:i+8,j:j+8], scalar)
 
-print("After Unquantization:")
-print(unreduArr[160:168,160:168])
+# print("After Unquantization:")
+# print(unreduArr[160:168,160:168])
 
 unreduArr = dctArr
 # uses IDCT
@@ -92,8 +92,8 @@ for i in range(0, nHeight):
     for j in range(0, nWidth):
         unreduArr[i,j] = unreduArr[i,j].round()
 
-print("After IDCT:")
-print(unreduArr[160:168,160:168])
+# print("After IDCT:")
+# print(unreduArr[160:168,160:168])
 #(Image.fromarray(unreduArr[160:168,160:168])).show()
 
 endImage = Image.fromarray(unreduArr)

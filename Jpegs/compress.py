@@ -4,6 +4,7 @@ import cv2
 import gzip
 np.set_printoptions(suppress=True)
 
+
 # convert image to a matrix
 img = Image.open('test.png')
 # img.show()
@@ -54,6 +55,7 @@ scalar = np.array([16, 11, 10, 16, 24, 40, 51, 61,
                    49, 64, 78, 87, 103,121,120,101,
                    72, 92, 95, 98, 112,100,103,99])
 scalar = scalar.reshape((8, 8))
+#scalar = scalar[::-1,::-1].T
 
 reduArr = np.zeros((nHeight, nWidth))
 for i in range(0, nHeight, 8):
@@ -64,42 +66,28 @@ for i in range(0, nHeight, 8):
 for i in range(0, nHeight):
     for j in range(0, nWidth):
         reduArr[i,j] = reduArr[i,j].round()
+        if reduArr[i,j] == 0:
+            reduArr[i,j] = 0
 
 # print("After Quantization:")
-# print(reduArr[160:168,160:168])
+# print(reduArr[0:17,0:17])
 # print(reduArr)
 # scales back threshold
 
-# zigzag encoding
-
+# zigzag encoding puts into 1d array for storage
 order = [0, 1, 8, 16, 9, 2, 3, 10, 17, 24, 32, 25, 18, 11, 4, 5, 12, 19, 26, 33, 40, 48, 41, 34, 27, 20, 13, 6, 7, 14, 21, 28, 35, 42, 49, 56, 57, 50, 43, 36, 29, 22, 15, 23, 30, 37, 44, 51, 58, 59, 52, 45, 38, 31, 39, 46, 53, 60, 61, 54, 47, 55, 62, 63]
 
 result = ''
 
-for i in range(0, nHeight, 8):
-    for j in range(0, nWidth, 8):
-        toBeRead = reduArr.flatten()
+for i in range(0, nHeight, 8): # first dimension
+    for j in range(0, nWidth, 8): # second dimension
+        toBeRead = reduArr[i:i+8, j:j+8].flatten() # converts j first i second wise flattens
         for index in order:
-            result += f'{int(abs(toBeRead[index])):08b}'
+            num = toBeRead[index]
+            if num <= 0: sign = '0'
+            else: sign = '1'
+            result += f'{sign}{int(abs(toBeRead[index])):08b}'
 
-# print(result[:512])
-
-# run-length encoding
-'''
-compressed = ''
-currChr = result[0]
-count = 0
-
-for bit in result:
-    if currChr == bit:
-        count += 1
-    else:
-        compressed += f'{bit}{count}|'
-        count = 1
-        currChr = bit
-
-# print(compressed)
-'''
 text_file = open("temp.txt", "w")
 text_file.write(f'{nHeight:064b}{nWidth:064b}{result}')
 text_file.close()
