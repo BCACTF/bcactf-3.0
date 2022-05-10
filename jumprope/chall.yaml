@@ -2,12 +2,18 @@ name: Jump Rope
 categories:
   - binex
 value: 150
-flag: bcactf{this_is_a_flag}
+flag: 
+  file: ./flag.txt
 description: |-
-  Gym class is my favorite time of day at BCA! I love t 
-  
+  Here at BCA, we take fitness very seriously.
+  Lately, our gym teachers have been stressing *jump*roping as cardio...
+  I'm not too good at it yet though, but I think you might be able to show me how its done!  
 hints:
-  - I love jumping!
+  - Look into gets
+  - Are all the functions in the program being called?
+files:
+  - src: jumprope.c
+    name: jumprope.c
 authors:
   - Yusuf
 visible: true
