@@ -3,10 +3,10 @@ categories:
   - webex
 value: 75
 flag: bcactf{u$ers_s33_c00k!es_7oo_863o4t5}
-flag_file:
-  "/flag.txt"
-description:
-  Look I made a website to teach you how to make cookies. 
+flag:
+  file: ./flag.txt
+description: |-
+  Look, I made a website to teach you how to make cookies. 
   There's some other recipes there too, and I made a super secure portal to add more.
 hints:
   - Look through all the javascript files carefully
