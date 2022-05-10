@@ -1,0 +1,20 @@
+name: Jump Rope
+categories:
+  - binex
+value: 150
+flag: 
+  file: ./flag.txt
+description: |-
+  Here at BCA, we take fitness very seriously.
+  Lately, our gym teachers have been stressing *jump*roping as cardio...
+  I'm not too good at it yet though, but I think you might be able to show me how its done!  
+hints:
+  - Look into gets
+  - Are all the functions in the program being called?
+files:
+  - src: jumprope.c
+    name: jumprope.c
+authors:
+  - Yusuf
+visible: true
+# TODO: deployment (compile c file and host on nc)
