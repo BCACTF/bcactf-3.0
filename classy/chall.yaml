@@ -1,0 +1,19 @@
+name: Classy
+categories:
+  - webex
+value: 100
+flag: bcactf{CL455Y_C0D3_CR4CK1NG_918273}
+
+description: |-
+  Just a wonderful website! 
+  It looks like the flag is right there!
+  Or is it?
+hints:
+  - There's a lot of text covering the flag; you might want to get rid of that.
+  - Perhaps there are a set of particularly relevant letters that tell you which pargraphs to show. (Maybe having to do with this event?)
+
+  #TODO: deployment
+
+authors:
+  - Jeremy Lee
+visible: true
