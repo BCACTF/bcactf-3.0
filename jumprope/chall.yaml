@@ -17,3 +17,4 @@ files:
 authors:
   - Yusuf
 visible: true
+# TODO: deployment (compile c file and host on nc)
