@@ -1,0 +1,13 @@
+name: Jump Rope
+categories:
+  - binex
+value: 150
+flag: bcactf{this_is_a_flag}
+description: |-
+  Gym class is my favorite time of day at BCA! I love t 
+  
+hints:
+  - I love jumping!
+authors:
+  - Yusuf
+visible: true
