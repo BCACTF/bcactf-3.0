@@ -7,7 +7,7 @@ flag:
 description: |-
   Here at BCA, we take fitness very seriously.
   Lately, our gym teachers have been stressing *jump*roping as cardio...
-  I'm not too good at it yet though, but I think you might be able to show me how its done!  
+  I'm not too good at it yet though, but I think you might be able to show me how it's done!  
 hints:
   - Look into gets
   - Are all the functions in the program being called?
@@ -17,4 +17,4 @@ files:
 authors:
   - Yusuf
 visible: true
-# TODO: deployment (compile c file and host on nc)
+# TODO: Deployment
