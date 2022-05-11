@@ -10,7 +10,7 @@
 ### SO MANY DOORS, WHICH ONE TO CHOOSE??? ###
 
 import random
-FLAG = 'bcaCTF{SE3DS_r_SP0O00OKY_7ICI3C}'
+FLAG = 'bcactf{SE3DS_r_SP0O00OKY_7ICI3C}'
 REQ_WINS = 10
 DOORS = 10
 usr_choice = ''

@@ -1,14 +1,17 @@
 name: Ghost Game
 categories:
   - rev
-value: 80
-flag: bcaCTF{SE3DS_r_SP0O00OKY_7ICI3C}
+value: 50
+flag: bcactf{SE3DS_r_SP0O00OKY_7ICI3C}
 description: |-
-  I love classic programs like Ghost Game! This one seems much more difficult though...
+  I love gaming in history class! This game is difficult to win though...
   I heard winning 10 times in a row leads to something good!
+
 hints:
   - How do computers generate random numbers?
+files:
+  - src: ./GhostGame.py
 authors:
   - Parth Jain
 visible: true
-# TODO : Deploy "GhostGame - to play.py"
+# TODO : Deploy "GhostGame_deploy.py"
