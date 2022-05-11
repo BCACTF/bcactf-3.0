@@ -9,8 +9,7 @@ description: |-
   Lately, our gym teachers have been stressing *jump*roping as cardio...
   I'm not too good at it yet though, but I think you might be able to show me how it's done!  
 hints:
-  - Look into gets
-  - Are all the functions in the program being called?
+  - You gotta return 2 win...
 files:
   - src: jumprope.c
     name: jumprope.c
