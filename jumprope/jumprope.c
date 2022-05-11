@@ -24,7 +24,7 @@ int main() {
     setbuf(stdout, NULL);
     setbuf(stdin, NULL);
     setbuf(stderr, NULL);
-	
+
     printf("Here at BCA, fitness is one of our biggest priorities!\n");
     printf("Today's workout is going to be jumproping. Enjoy!\n");
     jumprope();
