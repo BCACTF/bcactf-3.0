@@ -1,13 +1,15 @@
 name: Sequences
 categories:
   - crypto
-value: 50
+value: 100
 flag: bcactf{Cr4cKInG_Th3_R3C4MaN_S3qu3NcE}
 description: |-
   I began storing my password with a super secure sequence, but I had to go make toast.
   Can you please retrieve my password?
 hints:
   - Try looking for a list of the most famous sequences
+files:
+  - src: ./sequence.py
 authors:
   - Jack Crowley
 visible: true
