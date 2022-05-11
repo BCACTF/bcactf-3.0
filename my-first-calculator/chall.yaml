@@ -7,7 +7,6 @@ description: |-
   I'm learning JavaScript, and just created a calculator function! I didn't want to bother actually parsing the string bit-by-bit, though, and it's rather simple.
 hints:
   - My calculator function uses eval().
-  - You can't call any functions without letters, but can you do anything with strings to get letters?
   - You can use "[]+" to essentially cast something to a string.
   - To solve, you will need letters from "Infinity", "[object Object]", "true", "false", and "undefined".
 authors:
