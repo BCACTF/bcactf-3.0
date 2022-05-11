@@ -12,5 +12,5 @@ authors:
   - Mudasir
 visible: true
 files:
-  - ./src/modifiedflag.png
-  - ./src/index.js
+  -src: ./src/modifiedflag.png
+  -src: ./src/index.js
