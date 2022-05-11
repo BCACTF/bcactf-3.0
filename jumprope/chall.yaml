@@ -1,0 +1,19 @@
+name: Jump Rope
+categories:
+  - binex
+value: 150
+flag: 
+  file: ./flag.txt
+description: |-
+  Here at BCA, we take fitness very seriously.
+  Lately, our gym teachers have been stressing *jump*roping as cardio...
+  I'm not too good at it yet though, but I think you might be able to show me how it's done!  
+hints:
+  - You gotta return 2 win...
+files:
+  - src: jumprope.c
+    name: jumprope.c
+authors:
+  - Yusuf
+visible: true
+# TODO: Deployment
