@@ -1,6 +1,6 @@
 function myFirstCalculator(input) {
-    if (input.match(/[a-zA-Z"']/)) {
-        return "Bad input. Letters and quote marks are not allowed!";
+    if (input.match(/[a-zA-Z"'\\]/)) {
+        return "Bad input. Letters, backslashes, and quote marks are not allowed!";
     } else {
         try {
             return (eval(input));
