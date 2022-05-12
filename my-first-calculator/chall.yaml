@@ -8,7 +8,7 @@ description: |-
 hints:
   - My calculator function uses eval().
   - You can use "[]+" to essentially cast something to a string.
-  - To solve, you will need letters from "Infinity", "[object Object]", "true", "false", and "undefined".
+  - To solve, you will need letters from "[object Object]" and "false".
 authors:
   - Marvin
 visible: true
