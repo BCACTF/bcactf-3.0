@@ -1,0 +1,16 @@
+name: Really Secure Algorithm
+categories:
+  - crypto
+value: 125
+flag: bcactf{w311_th15_15_aWkWard_Fbahu8d3}
+description: |-
+  As BCA students, we are always pushing the limits of existing technologies!
+  Today, I had a breakthrough and created a Really Secure Algorithm.
+  Can you see if it's secure or not?
+hints:
+  - Maybe the challenge name is a hint?
+files:
+  - src: file.txt
+authors:
+  - Yusuf
+visible: true
