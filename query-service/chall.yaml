@@ -1,0 +1,14 @@
+name: Query Service
+categories:
+  - web 
+value: 100
+flag: bcactf{}
+description: |-
+  I've made a little website to access a SQL database.
+  I even added a way to share your queries with other people! Just copy the link.
+hints:
+  - 
+  - 
+authors:
+  - Marvin
+visible: true
