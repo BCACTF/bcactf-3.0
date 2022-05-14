@@ -1,0 +1,17 @@
+name: ROP Jump
+categories:
+  - binex
+value: 150
+flag: 
+  file: ./flag.txt
+description: |-
+  Same as jump rope, but now you need to rop, then jump
+hints:
+  - Where are parameters stored?
+files:
+  - src: ropjump.c
+    name: ropjump.c
+authors:
+  - Andrew
+visible: true
+# TODO: Deployment
