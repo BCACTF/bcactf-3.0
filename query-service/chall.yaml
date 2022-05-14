@@ -16,4 +16,4 @@ visible: true
 # "submit link to admin bot at [LINK]" right now, placeholder should be changed).
 # Not entirely sure how to get output from the bot, but I assume y'all will figure that out
 # (the table also instructs solvers that "the flag is in the bot's "flag" cookie")
-# for deploying this literally run any simple server in /src (tested with http-server)
+# also deploy /src
