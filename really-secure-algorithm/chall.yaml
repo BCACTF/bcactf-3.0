@@ -10,7 +10,7 @@ description: |-
 hints:
   - Maybe the challenge name is a hint?
 files:
-  - src: file.txt
+  - src: ./file.txt
 authors:
   - Yusuf
 visible: true
