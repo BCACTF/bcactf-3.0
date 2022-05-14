@@ -12,3 +12,7 @@ hints:
 authors:
   - Marvin
 visible: true
+# Implementation notes: Hide the fact that this is an XSS challenge (the SQL table says
+# "submit link to admin bot at [LINK]" right now, placeholder should be changed).
+# Not entirely sure how to get output from the bot, but I assume y'all will figure that out
+# (the table also instructs solvers that "the flag is in the bot's "flag" cookie")
