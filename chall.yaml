@@ -1,8 +1,8 @@
-name: Trivia Party!
+name: Trivial Trivia!
 categories:
-  - reverse
-value: 75
-flag: bcactf{TR1VI4_G4ME_C0M9L3T3D_746136}
+  - misc
+value: 50
+flag: bcactf{trivia_game_challenge_completed}
 
 description: |-
   Your friends want to test your knowledge!
@@ -10,8 +10,9 @@ description: |-
 
 hints:
   - Google can be a great source of information.
+  - Squares are a great shape. With four, you can make a bigger square!
 
 authors:
   - Jacob Berger
 visible: true
-# TODO: Deploy to Netcat
+# TODO: compile trivia.cpp and deploy the .exe file 

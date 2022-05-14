@@ -1,1 +1,1 @@
-bcactf{TR1VI4_G4ME_C0M9L3T3D_746136}
+bcactf{trivia_game_challenge_completed}

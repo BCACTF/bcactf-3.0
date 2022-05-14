@@ -63,7 +63,12 @@ int main() {
         return 0;
     }
 
-    cout << "Here is the flag: bcactf{TR1VI4_G4ME_C0M9L3T3D_746136}";
+    cout << "Cipher text: ";
+    cout << "VSVNXXFYCRCZCSQSVVHEQNGVVWGDSOLFLW\n" << endl;
+    cout << "Important info: " << endl;
+    cout << "VTNBCZMQYGPKUIFDXSROHLEAW" << endl;
+    cout << "WIHYRVGQEPSLFNXBMTDACUZKO" << endl;
+    cout << "Don't forget to add curly brackets, put underscores between words, and make all letters lowercase!" << endl;
     string leaveopen;
     cin >> leaveopen;
     return 0;
