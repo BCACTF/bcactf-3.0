@@ -5,13 +5,12 @@ value: 150
 flag: 
   file: ./flag.txt
 description: |-
-  Same as jump rope, but now you need to rop, then jump
+  BCA's cutting-edge non-existent fitness research program has recently received lots of funding! 
+  Our gym classes have received state-of-the-art treadmills, and you guessed it, jump ropes!
+  Our new jump ropes keep track of how many reps we have done... but are they accurate?
 hints:
-  - Where are parameters stored?
-files:
-  - src: src.c
-    name: ropjump.c
+  - You need to ROP before you jump
 authors:
   - Andrew
 visible: true
-# TODO: Deployment
+# TODO: Deploy challenge and provide executable
