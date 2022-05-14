@@ -15,7 +15,7 @@ void a(float score) {
     puts(flag);
 }
 
-void jumprope(){
+void ropjump(){
     char arr[500];
     printf("\nBetter start jumping!\n");
     gets(arr);
@@ -29,7 +29,7 @@ int main() {
 
     printf("Here at BCA, fitness is one of our biggest priorities!\n");
     printf("Today's workout is going to be jumproping. Enjoy!\n");
-    jumprope();
+    ropjump();
 
     return 1;
 }
