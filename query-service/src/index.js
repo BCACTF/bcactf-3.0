@@ -8,7 +8,7 @@ window.onload = function () {
     const resdiv = document.getElementById("results");
     const url = window.location.search;
     const searchParams = new URLSearchParams(url);
-    if (searchParams.get("query") !== null) {
+    if (searchParams.get("query")) {
         let query = searchParams.get("query");
         linkdiv.innerHTML = "Link to this query: <a href=\"?query=" + query + "\">(link)</a>";
         sdiv.innerHTML = "Your results are as follows:";
