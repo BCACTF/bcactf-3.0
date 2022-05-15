@@ -1,0 +1,15 @@
+name: permission denied
+
+categories:
+  - misc
+
+value: 75
+flag: bcactf{th3_p0w3r_0f_s3tU1D_w0000_2309}
+description: flag get
+
+hints:
+  - be observant ;)
+authors:
+  - zsofia
+
+visible: true
