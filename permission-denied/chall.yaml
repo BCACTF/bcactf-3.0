@@ -9,6 +9,9 @@ description: flag get
 
 hints:
   - be observant ;)
+files:
+  - src: mystery_files.zip
+    name: mystery.zip
 authors:
   - zsofia
 
