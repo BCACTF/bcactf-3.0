@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "express": "^4.17.3",
-    "hbs": "^4.2.0",
-    "morgan": "^1.10.0"
+    "hbs": "^4.2.0"
   }
 }
