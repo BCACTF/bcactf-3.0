@@ -1,11 +1,13 @@
-name: format fortune
+name: Format Fortune
 categories:
   - binex
-value: 150
+value: 175
 flag: 
   file: ./flag.txt
 description: |-
-  UNWRITTEN
+  I decided to take the marketing elective at BCA this trimester, and we were encouraged to start our own businesses!
+  I had the genius idea to start a casino because I love money.
+  Come give it a try!
 hints:
   - Combine your skills with the power of printf
 authors:
@@ -13,5 +15,4 @@ authors:
 visible: true
 # TODO: Deployment
 # - Only serve executable file
-
 # aslr
