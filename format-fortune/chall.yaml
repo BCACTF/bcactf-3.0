@@ -1,0 +1,17 @@
+name: format fortune
+categories:
+  - binex
+value: 150
+flag: 
+  file: ./flag.txt
+description: |-
+  UNWRITTEN
+hints:
+  - Combine your skills with the power of printf
+authors:
+  - Andrew
+visible: true
+# TODO: Deployment
+# - Only serve executable file
+
+# aslr
