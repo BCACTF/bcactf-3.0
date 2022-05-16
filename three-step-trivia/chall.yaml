@@ -1,0 +1,15 @@
+name: Three Step Trivia
+categories:
+  - webex
+value: 100
+flag: bcactf{sT41r_c4A3_m45T3R_5jfUn9Z}
+description: |-
+  Us at BCACTF love staircases so much that we decided to make a trivia quiz about them!
+  Are you a staircase expert? Can you solve all three steps?
+hints:
+  - The internet is a helpful resource
+authors:
+  - Matthew
+  - Krish
+visible: true
+# TODO: deployment

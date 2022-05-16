@@ -1,0 +1,14 @@
+{
+  "name": "threesteptrivia",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "hbs": "^4.2.0",
+    "morgan": "^1.10.0"
+  }
+}
