@@ -1,0 +1,17 @@
+name: .bcapng2
+categories:
+  - foren
+value: 125
+flag: bcactf{L4RG3_T3RNARY_NUM83R}
+description: |-
+  This time, we support THREE colors! And we've reduced the file size by using raw binary.
+  (Though, with caveats that it's hard to read with a text editor or edit manually, and that the maximum file size is 256x256.)
+hints:
+  - The resolution is now represented in just two bytes.
+  - The pixels now require ternary to represent three colors.
+  - Remember, the ternary's been converted to raw binary.
+files:
+  - src: ./chall.bcapng2
+  authors:
+  - Marvin
+visible: true
