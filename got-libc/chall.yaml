@@ -6,7 +6,6 @@ flag:
   file: ./flag.txt
 description: |-
   How far can you go with just one overflow
-hints:
 files:
   - src: src.c
     name: src.c
