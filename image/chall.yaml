@@ -1,0 +1,18 @@
+name: Glassed Over
+categories:
+  - rev
+value: 75
+flag: bcactf{b!gG3r_!mg_29354758}
+description: |-
+  I created a *new* way to hide images, see if you can reverse it and find the flag.
+hints:
+  - Carefully read through the javascript file to see if you can figure out what's happening.
+  - The result may not be perfect, but it should be mostly legible
+authors:
+  - Mudasir
+visible: true
+files:
+  - src: ./src/modifiedflag.png
+    name: modifiedflag.png
+  - src: ./src/index.js
+    name: index.js
