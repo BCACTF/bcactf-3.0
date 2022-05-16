@@ -1,12 +1,13 @@
 name: Pickles
 categories:
   - rev
-value: 75
+value: 125
 flag: bcactf{p1cKl3d_5h4zD4JaQVUSGi81NBll7}
 description: |-
   I like pickles. Apparently it's also a thing in programming too.
 hints:
   - What are pickles? (not the food)
+  - Is there a library to view the source code of a function?
 files:
   - src: ./data.ctf
 authors:
