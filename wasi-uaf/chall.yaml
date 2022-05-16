@@ -1,0 +1,20 @@
+name: Notetaker Wasm
+categories:
+  - binex
+value: 300
+flag: bcactf{e8f73a0ebcd82fcce8a}
+description: |-
+  Just another heap notetaker challenge - compiled to wasm.
+files:
+# provided.wasm should be provided
+# chall.wasm should be executed
+  - src: provided.wasm
+authors:
+  - Andrew
+# TODO : Deployment
+# Docker file needs to install something like wasmtime
+# https://wasmtime.dev/
+
+# DO NOT COMPILE UNLESS ABSOLUTELY NECESSARY (it may possibly modify the solve / provided) : emcc src.c -s STANDALONE_WASM -o XX.wasm
+# note: to create chall.wasm, modify provided.wasm so that sample flag is instead the actual flag
+# wasmtime chall.wasm
