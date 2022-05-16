@@ -12,6 +12,6 @@ hints:
   - Remember, the ternary's been converted to raw binary.
 files:
   - src: ./chall.bcapng2
-  authors:
+authors:
   - Marvin
 visible: true
