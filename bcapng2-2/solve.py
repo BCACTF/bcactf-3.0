@@ -20,11 +20,11 @@ def verify(pxs):
     return True
 
 i=0
-for pxs in range(pixels,pixels+256**9-256**6,256**6):
+for pxs in range(pixels,pixels+256**57-256**54,256**54):
     print(i)
     i+=1
     if verify(pxs):
         print("FOUND! See out.png")
         break
-# gets answer in ~11 mins on my machine
+# gets answer in 11-12 mins on my machine
 # extrapolating, would take ~36 to try all possibilities

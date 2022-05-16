@@ -169,4 +169,4 @@ for i in range(len(txt)):
 pixeldata = r5 + 27**len(txt) * (r4 + 27**len(txt) * (r3 + 27**len(txt) * (r2 + 27**len(txt) * r1)))
 f.write(pixeldata.to_bytes((pixeldata.bit_length() + 7) // 8, byteorder='big'))
 f.close()
-# manually zero out bytes 35-37 (hex) in a hex editor
+# manually zero out bytes 05-07 (hex) in a hex editor
