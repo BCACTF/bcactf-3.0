@@ -11,8 +11,7 @@ description: |-
 hints:
   - You gotta return 2 win...
 files:
-  - src: jumprope.c
-    name: jumprope.c
+  - src: src.c
 authors:
   - Yusuf
 visible: true
