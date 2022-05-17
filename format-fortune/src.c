@@ -35,7 +35,7 @@ int main() {
     if (magic == 0xBEEF) {
         puts("\nI'm impressed! You've won a flag");
         printflag();
-    } else puts("\I warned you! No flag today.");
+    } else puts("\nI warned you! No flag today.");
 
     return 1;
 }
