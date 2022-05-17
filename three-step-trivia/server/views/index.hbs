@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css" />
+  <title>Three Step Trivia</title>
+</head>
+
+<body>
+  <h2>Welcome to Three Step Trivia! Only real staircase experts can pass.</h2>
+  <div id="imageGallery">
+    <img src="https://goodstock.photos/wp-content/uploads/2018/07/Old-Fancy-Marble-Stairs.jpg">
+    <img src="https://goodstock.photos/wp-content/uploads/2017/10/Stairway-Going-Down.jpg">
+    <img src="https://www.ghoofie.com/images/2011/06/Clasic-Stairs-Design-Ideas.jpg">
+    <img src="https://1.bp.blogspot.com/-p2nLDo_m9Uo/Tiulws30G3I/AAAAAAAAASg/d6CJQn2Bif8/s1600/Louvre+Spiral+Staircase.jpg">
+    <img src="https://cdn.decoratorist.com/wp-content/uploads/diy-basement-remodel-stairs-ideas-small-407070.jpg">
+  </div>
+  <h2>According to the <a
+      href="https://www.cdaid.org/files/Building/Handouts/Stairs_and_Handrails.pdf"> 2018 IRC standard</a>, what is
+    the maximum riser height for stair risers in inches?</h2>
+  <h2 style="color:red">{{error}}</h2>
+  <form action="/" method="post">
+    <input type="number" name="answer" />
+    <button type="submit" class="btn">Submit</button>
+  </form>
+  <h3 style="color:green">Step 1/3</h3>
+</body>
+
+</html>
