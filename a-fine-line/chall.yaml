@@ -11,7 +11,7 @@ hints:
   - This uses the affine cipher, as clued by the title and description.
   - What's a convenient way to represent affine cipher keys? Remember, the plaintext should start with "bcactf".
 files:
-  src: ./chall.txt
+  - src: ./chall.txt
 authors:
   - Marvin
 visible: true
