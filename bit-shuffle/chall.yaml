@@ -7,7 +7,6 @@ flag:
 description: |-
   I made a program to perfectly shuffle my deck of bits.
   Could you put them back in order again?
-hints:
 files:
   - src: ./shuffle.py
   - src: ./shuffled
