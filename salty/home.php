@@ -85,7 +85,7 @@ function check_credentials($username,$password,$sid){
 		header('Location: '.URL.'/index.php');
 	}
 	elseif($user_id=='admin'){
-		echo("bcactf{1_10v3_h@5h_br0wn5_34209)");
+		echo("bcactf{1_10v3_h@5h_br0wn5_34209}");
 	}
 	else{
 		echo("you are not admin. have some hash browns though :,)");
