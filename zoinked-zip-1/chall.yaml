@@ -1,0 +1,17 @@
+name: Zoinked Zip 1
+categories:
+  - foren
+value: 150
+flag:
+  file: ./flag.txt
+description: |-
+  I accidentally put a magnet next to my hard drive, and some of my files got corrupted!
+  Luckily, the damage wasn't that bad, but I had a zip full of my favorite flags that got messed up.
+  Could you fix it for me?
+files:
+ - src: ./zoinked.zip
+hints:
+  - Look into the structure of a zip file.
+authors:
+  - Yusuf
+visible: true
