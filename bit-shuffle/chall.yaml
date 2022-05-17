@@ -9,7 +9,7 @@ description: |-
 hints:
 files:
   - src: ./shuffle.py
-  - src: ./shuffled.txt
+  - src: ./shuffled
 authors:
   - Marvin
 visible: true

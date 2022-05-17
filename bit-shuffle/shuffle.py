@@ -5,20 +5,13 @@ def tobits(s):
     for c in s:
         bits = bin(ord(c))[2:]
         bits = '00000000'[len(bits):] + bits
-        result.extend([int(b) for b in bits])
+        result.extend([b for b in bits])
     return result
-
-def frombits(bits):
-    chars = []
-    for b in range(int(len(bits) / 8)):
-        byte = bits[b*8:(b+1)*8]
-        chars.append(chr(int(''.join([str(bit) for bit in byte]), 2)))
-    return ''.join(chars)
 # end copied text
 
 txt = open("flag.txt", "r").read()
-f = open("shuffled.txt", "w")
-order = tobits("b")
+f = open("shuffled", "wb")
+order = [ 0, 1, 1, 0, 0, 0, 1, 0 ]
 deck = tobits(txt)
 for i in order:
     newdeck = []
@@ -30,4 +23,4 @@ for i in order:
             newdeck.append(deck[j+int(len(deck)/2)])
             newdeck.append(deck[j])
     deck = newdeck
-f.write(frombits(deck))
+f.write(int("".join(deck),2).to_bytes(len(deck)//8, byteorder="big"))
