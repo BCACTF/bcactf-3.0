@@ -5,7 +5,7 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/*
 
 COPY src.c .
-RUN gcc -o format-fortune src.c
+RUN gcc -o format-fortune -no-pie src.c
 
 
 FROM ubuntu@sha256:86ac87f73641c920fb42cc9612d4fb57b5626b56ea2a19b894d0673fd5b4f2e9
