@@ -1,0 +1,16 @@
+name: Bit Shuffling
+categories:
+  - rev
+value: 100
+flag: bcactf{this_is_a_flag}
+description: |-
+  I made a program to perfectly shuffle my deck of bits.
+  Could you put them back in order again?
+hints:
+files:
+  - src: ./shuffle.py
+  - src: ./shuffled.txt
+authors:
+  - Marvin
+visible: true
+# TODO: deployment
