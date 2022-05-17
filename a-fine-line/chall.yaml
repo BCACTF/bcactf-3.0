@@ -1,0 +1,17 @@
+name: A Fine Line
+categories:
+  - crypto
+value: 100
+flag: bcactf{g2b_npjs3p4d65k1}
+description: |-
+  I'm carefully drawing *a fine line* on this piece of paper, letting each portion guide the next...
+  (Digits and letters are 0-9 and 10-35 in their usual orders, and the underscore is 36.
+  {} are not encoded but should be added in afterwards. All letters are lowercase.)
+hints:
+  - This uses the affine cipher, as clued by the title and description.
+  - What's a convenient way to represent affine cipher keys? Remember, the plaintext should start with "bcactf".
+files:
+  src: ./chall.txt
+authors:
+  - Marvin
+visible: true
