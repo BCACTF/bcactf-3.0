@@ -1,0 +1,16 @@
+name: salty
+categories:
+  - crypto
+value: 100
+flag: bcactf{1_10v3_h@5h_br0wn5_34209)
+description: I was snooping around the office of a criminal organization, and I found a website storing one of their flags! Unfortunately, it looks like only admin can access the flags. 
+hints:
+  - looks like some careless programmer left behind a debug link...
+  - hmm, that's not the password you put in...
+authors:
+  - zsofia
+visible: true
+#CONFIG: apt install sqlite3 and apt install php-sqlite3 @deployment
+#CONFIG: enable sqlite3 in /etc/php/(version)/(apache2|cli)/php.ini
+#CONFIG: YOU MUST run config.php before deployment or the db will not initialize
+#we can do this in the dockerfile setup ig
