@@ -2,8 +2,8 @@ name: salty
 categories:
   - crypto
 value: 100
-flag: bcactf{1_10v3_h@5h_br0wn5_34209)
-description: I was snooping around the office of a criminal organization, and I found a website storing one of their flags! Unfortunately, it looks like only admin can access the flags. 
+flag: bcactf{1_10v3_h@5h_br0wn5_34209}
+description: I found the flag factory headquarters! Unfortunately, it looks like only admin can access the flags. Luckily for you, it seems like they've disregarded all security guidelines and only have 5-character alphanumeric passwords! Good luck!
 hints:
   - looks like some careless programmer left behind a debug link...
   - hmm, that's not the password you put in...
