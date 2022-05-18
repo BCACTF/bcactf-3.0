@@ -11,8 +11,7 @@ description: |-
 files:
   - src: ./zoinked2.zip
 hints:
-  # hint might be too easy 
-  - Try creating your own own zip files and see what stays consistent
+  - Try creating your own zip files and see what stays consistent
 authors:
   - Yusuf
 visible: true
