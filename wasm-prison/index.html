@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasm Prison</title>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+    <script>
+        WebAssembly.instantiateStreaming(fetch("./chall.wasm")).then((wasm) => {
+            const isFlag = wasm.instance.exports.isFlag;
+            const memory = new Uint8Array(wasm.instance.exports.memory.buffer);
+
+            document.querySelector('#main').innerHTML =
+`<h1> WebAssembly Prison </h1>            
+<input placeholder="bcactf{...}" id="input">
+<button id="btn">Check Flag</button>
+<p id="response"></p>`;
+
+            const inputElem = document.querySelector('#input');
+            const buttonElem = document.querySelector('#btn');
+            const resElem = document.querySelector('#response');
+
+            buttonElem.addEventListener('click', (_evnt) => {
+                const rawInput = new TextEncoder().encode(inputElem.value);
+                input: if (rawInput.length < 100) {
+                    memory.set(rawInput, 0);
+                    if (!isFlag(rawInput.length)) break input;
+
+                    resElem.style.color = 'green';
+                    resElem.innerText = "Correct! The flag is " + inputElem.value;
+                    return;
+                }
+                resElem.style.color = 'red';
+                resElem.innerText = "Correct! '" + inputElem.value + "' is not the flag";
+            });
+        })
+    </script>
+</body>
+</html>
