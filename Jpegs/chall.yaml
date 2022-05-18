@@ -1,13 +1,13 @@
-name: Blurry Jpeg
+name: Pirates
 categories:
   - rev
-value: 200
-flag: bcactf{something}
+value: 125
+flag: bcactf{LoB5T3r_FoN!}
 description: |-
-  I forgot my password to the password checker which is stored in the password checker which I forgot the password to!
-  Here's my password checker, can you help me remember the password?
+  I tried pirating the flag off of [REDACTED], but I only got this file called "flag".
+  The encoding algorithm was leaked, could you decode the flag?
 hints:
-  - How does a jpeg work?
+  - How does a Jpeg work?
 authors:
   - Maxwell Gong
 visible: true

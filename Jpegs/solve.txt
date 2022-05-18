@@ -1,9 +1,3 @@
-Readjust DCT table
+Write program in reverse
 
-Readjust Quantization table
-
-Reapply Quantization table
-
-Repurpose given script
-
-Unblurrify image
+Crappy example of a solve in solution folder
