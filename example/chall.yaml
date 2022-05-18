@@ -18,6 +18,8 @@ description: |-
 hints:
   - Have you tried turning it off and on again?
   - Have you tried forcing an unexpected reboot?
+files:
+  - src: ./a.txt
 authors:
   - John Doe
   - Jane Smith
