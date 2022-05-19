@@ -9,6 +9,7 @@ description: |-
   To leave the prison, enter the flag.
 hints:
   - What is call_indirect
+  - Bruteforce can sometimes be an option
 
 # TODO deploy index.html
 authors:
