@@ -60,12 +60,12 @@ void write2Note() {
 
 
 int menu() {
-    puts("\n]======[ MENU ]======[");
-    puts("] 1) Print a note     [");
-    puts("] 2) Delete note      [");
-    puts("] 3) Create a note    [");
-    puts("] 4) Write to a note  [");
-    puts("]=====================[");
+    puts("\n]=======[ MENU ]=======[");
+    puts("] 1) Print a note      [");
+    puts("] 2) Delete note       [");
+    puts("] 3) Create a note     [");
+    puts("] 4) Write to a note   [");
+    puts("]======================[");
     puts("Please choose an option (1, 2, 3, 4)");
     int res = 0;
     scanf("%d", &res);
