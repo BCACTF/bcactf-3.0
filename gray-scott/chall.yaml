@@ -6,7 +6,7 @@ flag: bcactf{the-gray-scott-system-is-a-reaction-diffusion-system-8RCEGOUALMP}
 description: |-
   My YouTube recommendations have been FLOODED with Gray-Scott videos recently.
   Sure, I watch a lot of videos of random simulations, but how many videos
-  of "Gray-Scott Reaction-Diffusion (satisfying) #short" videos with 31 views 
+  of "Gray-Scott Reaction-Diffusion (satisfying) #short" with 31 views 
   can I endure before I go insane? Anyways, here's an unrelated crypto problem.
 hints:
   - The Gray-Scott system is a reaction-**diffusion** system.
