@@ -1,0 +1,17 @@
+name: Funky Factors
+categories:
+  - crypto
+value: 175
+flag: bcactf{w0w_f4ct0r1ng_l3g3nd_hAUebf29}
+description: |-
+  Okay. Turns out the last algorithm wasn't secure after all...
+  I think it was because I gave you too much information!
+  Can you see if its really unbreakable this time?
+hints:
+  # might need another / reworked hint
+  - Maybe there is something special about the size of the factors?
+files:
+  - src: ./file.txt
+authors:
+  - Yusuf
+visible: true
