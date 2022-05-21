@@ -7,7 +7,6 @@ RUN apt-get update -y && \
 COPY src.c .
 RUN gcc -o format-fortune -no-pie src.c
 
-
 FROM ubuntu@sha256:86ac87f73641c920fb42cc9612d4fb57b5626b56ea2a19b894d0673fd5b4f2e9
 
 RUN useradd -m -d /home/ctf -u 12345 ctf
