@@ -10,10 +10,15 @@ description: |-
   I'm not too good at it yet though, but I think you might be able to show me how it's done!  
 hints:
   - You gotta return 2 win...
+deploy:
+  nc:
+    build: .
+    expose: 9999/tcp
 files:
   - src: src.c
+    name: jumprope.c
+  - src: jumprope
+    container: nc
 authors:
   - Yusuf
 visible: true
-# TODO: Deployment
-# - Provide executable
