@@ -1,0 +1,34 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#imageGallery img {
+  height: 15em;
+}
+
+#imageGallery, form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  margin-left: 1em;
+  width: 6em;
+  border-radius: 11px;
+  line-height: 32px;
+  font-size: 1.5em;
+
+}
+
+input {
+  width: 30%;
+  line-height: 32px;
+  font-size: 1.5em;
+}

@@ -1,0 +1,3 @@
+Notice that all PKZip files have PK and then another PK under them within the zip file.
+in this file, the second PK should be there, but is replaced with the bytes \x10\x01.
+Fix these to be PK again and the file opens normally, giving you the flag.

@@ -18,6 +18,10 @@ description: |-
 hints:
   - Have you tried turning it off and on again?
   - Have you tried forcing an unexpected reboot?
+files:
+  - src: ./flag.txt
+  - src: ./a.txt
+    name: optionallyrenamethefile.txt
 authors:
   - John Doe
   - Jane Smith
