@@ -16,7 +16,6 @@ int selectNoteIndex() {
         puts("Invalid note index! Index must be from 1 to 8 (inclusive)");
         return -1;
     }
-    printf("%d\n", idx);
     return idx - 1;   
 }
 
@@ -44,14 +43,12 @@ void createNote() {
         return exit(1);
     }
     puts("Note has been created");
-    printf("%p\n", note);
 }
 
 void write2Note() {
     int idx = selectNoteIndex();
     if (idx == -1) return;
     NoteContent note = notes[idx];
-    printf("%p\n", note);
     printf("Send note content for note #%d\n", idx + 1);
     scanf("%15s", note);
     notes[idx] = note;
