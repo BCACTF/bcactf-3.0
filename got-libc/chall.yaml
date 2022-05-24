@@ -1,0 +1,16 @@
+name: Got libc?
+categories:
+  - binex
+value: 150
+flag: 
+  file: ./flag.txt
+description: |-
+  How far can you go with just one overflow
+files:
+  - src: src.c
+    name: src.c
+authors:
+  - Andrew
+visible: true
+# TODO: Deployment
+# - Provide executable
