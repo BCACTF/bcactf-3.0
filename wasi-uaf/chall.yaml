@@ -15,7 +15,7 @@ files:
 # provided.wasm should be provided
 # chall.wasm should be executed
   - src: provided.wasm
-    name: chall.wasm
+    dest: chall.wasm
 authors:
   - Andrew
 

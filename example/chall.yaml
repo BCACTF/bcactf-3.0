@@ -21,7 +21,7 @@ hints:
 files:
   - src: ./flag.txt
   - src: ./a.txt
-    name: optionallyrenamethefile.txt
+    dest: optionallyrenamethefile.txt
 authors:
   - John Doe
   - Jane Smith
