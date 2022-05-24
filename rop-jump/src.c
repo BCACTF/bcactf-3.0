@@ -11,6 +11,7 @@ void b() {
     if(fptr == NULL){
         printf("\nLooks like we've run out of jump ropes...\n");
         printf("Challenge is misconfigured. Please contact admin if you see this.\n");
+        return;
     }
     puts("Wow, how do you manage to jump 1.234 times. Guess we might need to return those jump ropes...\n");
     fgets(flag, sizeof(flag), fptr);
