@@ -12,5 +12,8 @@ hints:
   - You can't access the control panel from every device out there.
 authors:
   - Shay Mor
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
 visible: true
-# TODO: deployment
