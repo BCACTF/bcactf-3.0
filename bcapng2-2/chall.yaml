@@ -13,8 +13,8 @@ hints:
   - Can you figure out some features of the "consistent format" the program uses?
   - Each character is 3 pixels wide by 5 pixels high, and they alternate in color between 2 and 1.
 files:
-  - src: ./chall.bcapng2
-  - src: ./QU1CKBR0WNFOX.bcapng2
+  src: ./chall.bcapng2
+  src: ./QU1CKBR0WNFOX.bcapng2
 authors:
   - Marvin
 visible: true
