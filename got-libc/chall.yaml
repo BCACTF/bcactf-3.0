@@ -7,10 +7,11 @@ flag:
 description: |-
   How far can you go with just one overflow
 files:
-  - src: src.c
-    name: src.c
+  - src: got-libc
+    container: nc
+  - src: /lib/x86_64-linux-gnu/libc-2.31.so
+    name: libc.so.6
+    container: nc
 authors:
   - Andrew
 visible: true
-# TODO: Deployment
-# - Provide executable
