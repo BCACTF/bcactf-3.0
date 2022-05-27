@@ -4,7 +4,7 @@
 float jumps = 0;
 
 void b() {
-    if (jumps != 1.234) return;
+    if (jumps >= 2.0 || jumps <= 1.0) return;
     
     FILE *fptr = fopen("flag.txt", "r");
     char flag[100];
@@ -13,7 +13,7 @@ void b() {
         printf("Challenge is misconfigured. Please contact admin if you see this.\n");
         return;
     }
-    puts("Wow, how do you manage to jump 1.234 times. Guess we might need to return those jump ropes...\n");
+    printf("Wow, how did you manage to jump %.2f times. Guess we might need to return those jump ropes...\n", jumps);
     fgets(flag, sizeof(flag), fptr);
     puts(flag);
 }
