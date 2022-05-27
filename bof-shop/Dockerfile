@@ -5,7 +5,8 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/*
 
 COPY src.c .
-RUN gcc -o format-fortune -no-pie src.c
+RUN gcc -o bof-shop -fno-stack-protector src.c
+
 
 FROM ubuntu@sha256:86ac87f73641c920fb42cc9612d4fb57b5626b56ea2a19b894d0673fd5b4f2e9
 
@@ -15,11 +16,11 @@ WORKDIR /home/ctf
 COPY ynetd .
 RUN chmod +x ynetd
 
-COPY --from=build format-fortune format-fortune
+COPY --from=build bof-shop bof-shop
 COPY flag.txt .
 
 RUN chown -R root:root /home/ctf
 
 USER ctf
 EXPOSE 9999
-CMD ./ynetd -p 9999 ./format-fortune
+CMD ./ynetd -p 9999 ./bof-shop

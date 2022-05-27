@@ -9,8 +9,14 @@ description: |-
   All you need to do is get a few coins first. Good luck.
 hints:
   - What does BOF stand for?
+deploy:
+  nc:
+    build: .
+    expose: 9999/tcp
 files:
   - src: src.c
+    name: bof-shop.c
+  - src: bof-shop
+    container: nc
 authors:
   - Andrew
-# TODO : Deployment
