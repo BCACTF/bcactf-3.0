@@ -1,9 +1,9 @@
-const readline = require('node:readline');
+const readline = require('readline');
 
 function myFirstCalculator(input) {
     if (!input) return "Please input text";
-    if (input.match(/[a-zA-Z"`'\/]/)) {
-        return "Bad input. Letters, backslashes, and quote marks are not allowed!";
+    if (input.match(/[a-zA-Z"`'\\]/)) {
+        return "Bad input. Letters, backslashes, backticks, and quote marks are not allowed!";
     } else if (input.length > 45){
         return "Bad input. Input must be 45 characters long or less"
     }
