@@ -9,8 +9,8 @@ description: |-
 hints:
   - How does a Jpeg work?
 files:
-  encode.py
-  flag
+  - src: ./flag
+  - src: ./encode.py
 authors:
   - Maxwell Gong
 visible: true
