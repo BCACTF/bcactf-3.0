@@ -5,9 +5,9 @@ value: 250
 flag: 
   file: ./flag.txt
 description: |-
-  ASLR, RELRO, PIE... Can you defeat them? Try out my echo server and find out
+  ASLR, RELRO, PIE... How do you defeat them? Try out my echo server to find out
 hints:
-  - What is on the stack?
+  - What is available to you on the stack?
 deploy:
   nc:
     expose: 9999/tcp
