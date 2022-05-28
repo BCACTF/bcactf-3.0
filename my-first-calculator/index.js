@@ -2,7 +2,7 @@ const readline = require('node:readline');
 
 function myFirstCalculator(input) {
     if (!input) return "Please input text";
-    if (input.match(/[a-zA-Z"`'\/\]/)) {
+    if (input.match(/[a-zA-Z"`'\/]/)) {
         return "Bad input. Letters, backslashes, and quote marks are not allowed!";
     } else if (input.length > 45){
         return "Bad input. Input must be 45 characters long or less"
@@ -18,7 +18,7 @@ function myFirstCalculator(input) {
 
 console.log("Get the flag by making the calculator output \"bcactf\"!");
 
-const rl = readline.createInterface({ input: process.stdin, output: process.stdin });
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
 rl.question('> ', (response) => {
   const c = myFirstCalculator(response)
