@@ -2,7 +2,7 @@ name: Agent Rocket
 categories:
   - webex
 value: 100
-flag: BCACTF{u53r_4g3Nt5_5rE_c0OL_1023}
+flag: bcactf{u53r_4g3Nt5_5rE_c0OL_1023}
 description: |-
   I need to launch the BCA CTF ROCKET to the moon!
   Unfortunately I lost my launch code (flag).
