@@ -8,6 +8,9 @@ description: |-
   The encoding algorithm was leaked, could you decode the flag?
 hints:
   - How does a Jpeg work?
+files:
+  encode.py
+  flag
 authors:
   - Maxwell Gong
 visible: true
