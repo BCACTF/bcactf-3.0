@@ -5,11 +5,9 @@ value: 250
 flag: 
   file: ./flag.txt
 description: |-
-  I decided to take the marketing elective at BCA this trimester, and we were encouraged to start our own businesses!
-  I had the genius idea to start a casino because I love money.
-  Come give it a try!
+  ASLR, RELRO, PIE... Can you defeat them? Try out my echo server and find out
 hints:
-  - Combine your skills with the power of printf
+  - What is on the stack?
 deploy:
   nc:
     expose: 9999/tcp
