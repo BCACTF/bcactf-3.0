@@ -1,0 +1,5 @@
+1. Get 2 md5 files that have the same hash.
+2. Convert them to a hex string
+3. Type "plant a flag", then the first file.
+4. Type "check a flag", then the second file.
+5. It should panic with the flag.
