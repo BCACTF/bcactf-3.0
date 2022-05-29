@@ -5,10 +5,10 @@ categories:
 
 value: 75
 flag: bcactf{th3_p0w3r_0f_s3tU1D_w0000_2309}
-description: flag get
+description: i created a little filesystem, but i must have messed something up becuase something here is not quite right... can you find my flag?
 
 hints:
-  - be observant ;)
+  - can you even open the file with the flag in it?
 files:
   - src: mystery_files.zip
     name: mystery.zip
