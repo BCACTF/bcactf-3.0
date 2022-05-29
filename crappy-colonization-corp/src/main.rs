@@ -2,7 +2,8 @@ use std::collections::{ HashMap, HashSet };
 use std::num::ParseIntError;
 use std::io::{ stdin, Stdin };
 use std::time::{ SystemTime, UNIX_EPOCH };
-use md5::compute as proprietary_algorithm;
+// use ****** as proprietary_algorithm;
+// good luck :)
 
 static START_TEXT: &str = r#"
 You're one of the first people to begin mars's colonization!
