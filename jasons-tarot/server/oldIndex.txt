@@ -1,0 +1,72 @@
+const express=require("express");
+const decode=require('jwt-decode');
+const { readFileSync }=require("fs");
+const cookieParser = require("cookie-parser");
+const jwt=require("jsonwebtoken");
+var path = require('path');
+
+const app=express();
+var dir = path.join(__dirname, 'public');
+app.use(express.static(dir));
+app.use(cookieParser());
+let secret=readFileSync('secret.txt');
+let data={
+	isSubscriber: false,
+};
+const token = jwt.sign(data, secret);
+
+//app.get('/index.html', (req,res)=>{
+//	req.header("Content-Type", "text/html");
+//	res.send(readFileSync('pages/index.html'));
+//})
+
+app.get('/checktoken', (req,res)=>{
+	try{
+		if (typeof(req.cookies.token) == 'undefined'){
+			res.cookie('token',token);
+			res.send("You didn't have a token cookie, so i give you the default<br/>");
+		}
+		else if (jwt.verify((req.cookies.token),secret)){
+			let jwt=req.cookies.token;
+			//valid token
+			let decoded=decode(jwt)
+			console.log("decoded token:"+decoded);
+			console.log("decoded token.isSubscriber="+decoded.isSubscriber);
+			console.log("decoded token['isSubscriber']="+decoded['isSubscriber']);
+			//let jwtObj=JSON.parse(decoded);
+			if(decoded.isSubscriber==true){
+				res.send("flag get");
+			}
+			else{
+				res.send("tarot get!");
+				//console.log(typeof(decoded[isSubscriber]));
+			}
+		}
+	}
+	catch{
+		return res.status(401).send("invalid JWT :(");
+		//res.send("You have a normal cookie. Here's a second breakfast");
+	}
+
+	/*try {
+		const token = req.cookies(token);
+	  
+		const verified = jwt.verify(token, secret);
+		if(verified){
+		    return res.send("Successfully Verified");
+		}else{
+		    // Access Denied
+		   return res.status(401).send(error);
+		}
+	    } catch (error) {
+		// Access Denied
+		return res.status(401).send(error);
+	    }*/
+});
+app.get('/debug/deleteCookies/13371215', (req,res)=>{
+	res.clearCookie()
+	res.send('cleard');
+});
+	
+
+app.listen(1338, () => console.log('The server is running http://localhost:1338'));

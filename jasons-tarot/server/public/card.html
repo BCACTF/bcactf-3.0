@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Jason's Tarot Cards</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+.page {background-color: #129c53; padding: 30px; font-family: sans-serif;}
+.content {margin: 0 auto 0 auto; width:70%;}
+.action {display: block; margin: 0 auto 0 auto; padding: 4px; text-align: center;}
+.action button {border: 2px solid blue; background-color: yellow; color: blue; padding: 8px; font-size: 1.5em; font-family: serif;}
+.card-container {margin: 60px auto 10px auto; }
+.card img {margin: 10px auto 10px auto; border: 4px solid #f0da12; height: 350px;}
+
+</style>
+	<script>
+		$(document).ready(function(){
+			function setRandTarot(){
+				var images = [
+					'la_justice.png',
+					'le_diable.png',
+					'le_monde.png',
+					'le_pendu.png',  
+					'rayne_de_baton.png',
+					'reyne_depee.png',
+					'la_lune.png',
+					'le_empereur.png',  
+					'le_soleil.png',
+					'valet_depee.png',
+					'cavalier_de_baton.png',
+					'le_bateleur.png',
+					'le_mat.png',
+					'le_pape.png', 
+					'limpiratrice.png',
+					'reyne_debaton.png'
+					];
+				var i;
+				i = parseInt(Math.random() * images.length);
+				console.log("Set tarot to "+i+": "+images[i]);
+				$('#tarot').fadeOut(	function(){
+								$('#tarot').attr('src', 'img/'+images[i]);
+								$('#tarot').fadeIn();
+				});
+
+			}
+			function setDeathTarot(){
+				console.log("Set tarot to death");
+				$('#tarot').fadeOut(	function(){
+								$('#tarot').attr('src', 'img/le_mort.png');
+								$('#tarot').fadeIn();
+				});
+
+			}
+			$('#refresh-card').click(function(){
+				$("#message").text("");
+				$.get('checktoken')
+					.done(function(data, status){
+						console.log("Status is "+status);
+
+						if (data['message'] == "0"){
+							setRandTarot();
+						}
+						else if (data['message'] == "1"){
+							setDeathTarot();
+						}
+						else {
+							$('#tarot').fadeOut();
+							$('#message').text(data['message']);
+							$('#message').fadeIn();
+						}
+					})
+					.fail(function(data){
+						console.log("API call to checktoken complains");
+						setRandTarot();
+					})
+			});
+		});
+	</script>
+	</head>
+	<body class='page'>
+		<div class='content'>
+			<div class='head'>
+				<a href="/" style="text-decoration: none; color: black;"><h1>Jason's Tarot Cards</h1></a>
+			</div>
+			<div class='instructions'>
+				<p>Here is your card.</p>
+			</div>
+			<div class='card-container'>
+				<div class='card'>
+					<img id='tarot' src="img/card_back.png" style="display: block"/>
+				</div>
+				<div class='message'>
+					<span id='message'></span>
+				</div>
+				<div class='action'>
+					<button id='refresh-card' >Pull Card</button>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
+
