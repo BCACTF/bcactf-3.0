@@ -21,4 +21,4 @@ files:
     container: nc
 authors:
   - Andrew
-visibe: true
+visible: true
