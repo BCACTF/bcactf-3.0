@@ -27,9 +27,9 @@ app.use(cookieParser());
 
 app.get('/checktoken', (req, res) => {
         var retVal = defaultResponse;
-        console.log("starting checktoken");
+        //console.log("starting checktoken");
         if(req.cookies.token){
-                console.log("found token: "+req.cookies.token);
+                //console.log("found token: "+req.cookies.token);
                 /*if (req.cookies.token == specialToken){
                         console.log("special token");
                         retVal=specialResponse;
@@ -43,9 +43,9 @@ app.get('/checktoken', (req, res) => {
 				let jwt=req.cookies.token;
 				//valid token
 				let decoded=decode(jwt)
-				console.log("decoded token:"+decoded);
-				console.log("decoded token.isSubscriber="+decoded.isSubscriber);
-				console.log("decoded token['isSubscriber']="+decoded['isSubscriber']);
+				//console.log("decoded token:"+decoded);
+				//console.log("decoded token.isSubscriber="+decoded.isSubscriber);
+				//console.log("decoded token['isSubscriber']="+decoded['isSubscriber']);
 				//let jwtObj=JSON.parse(decoded);
 				if(decoded.isSubscriber==true){
 					//res.send("flag get");
@@ -53,21 +53,21 @@ app.get('/checktoken', (req, res) => {
 				}
 				else{
 					//res.send("tarot get!");
-					console.log("not subsrcibe~!");
+					//console.log("not subsrcibe~!");
 				}
 			}
 		}	
 		catch{
-			console.log("malformed jwt");
+			//console.log("malformed jwt");
 			retVal=malformedResponse;
 		}
 	}
         else {
                 // no cookie present, set default
-                console.log("No cookie token");
+                //console.log("No cookie token");
         }
-	console.log("Resetting token to default and returning "+retVal);
-	console.log("Think i'm resetting token to "+defaultToken);
+	//console.log("Resetting token to default and returning "+retVal);
+	//console.log("Think i'm resetting token to "+defaultToken);
 
         res.setHeader('Content-Type', 'application/json');
         res.cookie('token', defaultToken);
