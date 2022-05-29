@@ -11,5 +11,8 @@ hints:
 authors:
   - Matthew
   - Krish
+deploy:
+  web:
+    build: .
+    expose: 54321/tcp
 visible: true
-# TODO: deployment

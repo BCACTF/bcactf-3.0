@@ -13,5 +13,8 @@ hints:
   - Cookies can be modified client-side
 authors:
   - Mudasir Ali
+deploy:
+  web:
+    build: .
+    expose: 80/tcp
 visible: true
-# TODO deploy [everything in the /src folder]

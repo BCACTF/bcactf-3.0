@@ -13,6 +13,6 @@ authors:
 visible: true
 files:
   - src: ./src/modifiedflag.png
-    name: modifiedflag.png
+    dest: modifiedflag.png
   - src: ./src/index.js
-    name: index.js
+    dest: index.js
