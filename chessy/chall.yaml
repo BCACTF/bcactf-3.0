@@ -3,7 +3,6 @@ categories:
   - crypto
 value: 100
 flag: bcactf{3n_pa5sen7_ch3ckm4t3_92aj32lm9ui}
-
 description: |-
   I've been learning a bit of chess recently.
   However, I can't seem to understand whatever this is.
@@ -13,7 +12,6 @@ hints:
   - These positions don't seem like they'd actually be found in real games. Maybe there's something else to them?
 files:
   - src: FEN.txt
-
 authors:
   - Jeremy Lee
 visible: true

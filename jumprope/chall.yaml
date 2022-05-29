@@ -17,7 +17,8 @@ deploy:
 files:
   - src: src.c
     name: jumprope.c
-  - src: jumprope
+  - src: /home/ctf/jumprope
+    dest: jumprope
     container: nc
 authors:
   - Yusuf

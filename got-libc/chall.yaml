@@ -11,10 +11,11 @@ deploy:
     expose: 9999/tcp
     build: .
 files:
-  - src: got-libc
+  - src: /home/ctf/got-libc
+    dest: got-libc
     container: nc
   - src: /lib/x86_64-linux-gnu/libc-2.31.so
-    name: libc.so.6
+    dest: libc.so.6
     container: nc
 authors:
   - Andrew

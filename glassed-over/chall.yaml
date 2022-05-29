@@ -8,11 +8,11 @@ description: |-
 hints:
   - Carefully read through the javascript file to see if you can figure out what's happening.
   - The result may not be perfect, but it should be mostly legible
-authors:
-  - Mudasir
-visible: true
 files:
   - src: ./src/modifiedflag.png
     dest: modifiedflag.png
   - src: ./src/index.js
     dest: index.js
+authors:
+  - Mudasir
+visible: true

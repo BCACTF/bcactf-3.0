@@ -13,7 +13,8 @@ deploy:
     expose: 9999/tcp
     build: .
 files:
-  - src: rop-jump
+  - src: /home/ctf/rop-jump
+    dest: rop-jump
     container: nc
 hints:
   - You need to ROP before you jump

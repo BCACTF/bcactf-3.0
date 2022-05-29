@@ -15,8 +15,10 @@ deploy:
     expose: 9999/tcp
 files:
   - src: src.c
-    name: bof-shop.c
-  - src: bof-shop
+    dest: bof-shop.c
+  - src: /home/ctf/bof-shop
+    dest: bof-shop
     container: nc
 authors:
   - Andrew
+visibe: true

@@ -18,7 +18,7 @@ files:
     dest: chall.wasm
 authors:
   - Andrew
-
+visible: true
 # DO NOT COMPILE UNLESS ABSOLUTELY NECESSARY (it may possibly modify the solve / provided) : emcc src.c -s STANDALONE_WASM -o XX.wasm
 # note: to create chall.wasm, modify provided.wasm so that sample flag is instead the actual flag
 # wasmtime chall.wasm
