@@ -1,0 +1,19 @@
+name: My First Calculator
+categories:
+  - misc
+value: 100 
+flag: bcactf{G00D_EV4LUAT1ON}
+description: |-
+  I'm learning JavaScript, and just created a calculator function! I didn't want to bother actually parsing the string bit-by-bit, though, and it's rather simple.
+hints:
+  - My calculator function uses eval().
+  - You can use "[]+" to essentially cast something to a string.
+  - To solve, you will need letters from "[object Object]" and "false".
+authors:
+  - Marvin
+deploy:
+  nc:
+    expose: 9999/tcp
+    build: .
+visible: true
+# index.js needs to be executable, but not readable

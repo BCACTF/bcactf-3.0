@@ -1,0 +1,17 @@
+name: Wasm Prison
+categories:
+  - webex
+  - rev
+value: 150
+flag: bcactf{th3_1nd1r3ct_PR1S0N_95c3b0}
+
+description: |-
+  To leave the prison, enter the flag.
+hints:
+  - What is call_indirect
+  - Bruteforce can sometimes be an option
+
+# TODO deploy index.html
+authors:
+  - Andrew
+visible: true
