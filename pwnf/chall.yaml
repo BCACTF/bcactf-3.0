@@ -1,0 +1,20 @@
+name: pwnf
+categories:
+  - binex
+value: 250
+flag: 
+  file: ./flag.txt
+description: |-
+  ASLR, RELRO, PIE... How do you defeat them? Try out my echo server to find out
+hints:
+  - What is available to you on the stack?
+deploy:
+  nc:
+    expose: 9999/tcp
+    build: .
+files:
+  - src: pwnf
+    container: nc
+authors:
+  - Andrew
+visible: true
