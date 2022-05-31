@@ -84,7 +84,7 @@ fn main() {
         .inspect(|name| println!("Pre-registering member: {}", sanitize_to_string(name)))
         .map(proprietary_algorithm)
         .for_each(|digest| {
-            plot_map.insert(digest, (&flag, UNIX_EPOCH));
+            plot_map.insert(digest, ("flag{PREREGISTERED_DUMMY_FLAG}", UNIX_EPOCH));
         });
 
     loop {
