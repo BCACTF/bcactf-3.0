@@ -9,8 +9,11 @@ description: |-
 hints:
   - How do computers generate random numbers?
 files:
-  - src: ./GhostGame.py
-    dest: ghostgame.py
+  - src: GhostGame.py
+deploy:
+  nc:
+    build: .
+    expose: 9999/tcp
 authors:
   - Parth Jain
 visible: true
