@@ -27,7 +27,7 @@ int main() {
     for (byt = 0; byt < 256; ++byt) {
         checks[byt ^ 137] = [byt](int idx) {
             if (idx < 7 || idx == 33) return byt == encodedFlag[idx] ? 1 : 0;
-            return ((((byt ^ idx) - byt) * 1337 + 1 + idx) & 0xFF) == (encodedFlag[idx] & 0xFF) ? 1 : 0;
+            return ((byt * 1337 + 1 + idx) & 0xFF) == (encodedFlag[idx] & 0xFF) ? 1 : 0;
         };
     };
 
