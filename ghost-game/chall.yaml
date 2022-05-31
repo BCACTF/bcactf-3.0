@@ -9,7 +9,7 @@ description: |-
 hints:
   - How do computers generate random numbers?
 files:
-  - src: ./GhostGame_deploy.py
+  - src: ./GhostGame.py
     dest: ghostgame.py
 authors:
   - Parth Jain
