@@ -1,10 +1,8 @@
 const express = require("express");
 const decode = require('jwt-decode');
-const { readFileSync, read } = require("fs");
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
 var path = require("path");
-const url = require("url");
 
 const port = 1337;
 
