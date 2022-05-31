@@ -1,0 +1,14 @@
+name: Convoluted
+categories:
+  - rev
+value: 100
+flag: bcactf{20om_4nd_3nhance_705}
+description: |-
+  My glasses are blurry. Can you help me read the flag?
+  (Note: All letters are lowercase.)
+files:
+  - src: ./chall.png
+  - src: ./convoluted.py
+authors:
+  - Marvin
+visible: true
