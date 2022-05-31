@@ -1,0 +1,13 @@
+name: Three Step Trivia
+categories:
+  - misc
+value: 100
+flag: bcactf{f4rthER_th4n_m3eTS_th3_EY3_9928ef}
+description: |-
+  Make it to the end of my endless maze to get the flag!
+  https://forms.gle/E6WfJUuf7DLpvySo8
+hints:
+  - How does google know where you are and where you've been?
+authors:
+  - Andrew
+visible: true
