@@ -1,7 +1,7 @@
 name: Jump Rope
 categories:
   - binex
-value: 150
+value: 125
 flag: 
   file: ./flag.txt
 description: |-
