@@ -1,6 +1,6 @@
 <?php
 define ('PWLEN', 5);
-define ('PASSWORD', 'BCA4u');
+define ('PASSWORD', 'bca4');
 #define ('PASSWORD', 'aaaab');
 define ('SALT', 'NaCl2');
 define ('DEBUG', 0);
