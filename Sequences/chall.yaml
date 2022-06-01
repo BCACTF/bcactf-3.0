@@ -1,6 +1,6 @@
 name: Sequences
 categories:
-  - crypto
+  - misc
 value: 100
 flag: bcactf{Cr4cKInG_Th3_R3C4MaN_S3qu3NcE}
 description: |-

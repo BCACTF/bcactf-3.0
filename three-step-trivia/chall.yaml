@@ -1,7 +1,7 @@
 name: Three Step Trivia
 categories:
   - webex
-value: 75
+value: 100
 flag: bcactf{sT41r_c4A3_m45T3R_5jfUn9Z}
 description: |-
   Us at BCACTF love staircases so much that we decided to make a trivia quiz about them!

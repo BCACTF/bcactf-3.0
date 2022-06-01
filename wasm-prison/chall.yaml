@@ -2,7 +2,7 @@ name: Wasm Prison
 categories:
   - webex
   - rev
-value: 150
+value: 225
 flag: bcactf{th3_1nd1r3ct_PR1S0N_95c3b0}
 description: |-
   To leave the prison, enter the flag.

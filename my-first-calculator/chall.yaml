@@ -1,7 +1,7 @@
 name: My First Calculator
 categories:
   - misc
-value: 100 
+value: 175
 flag: bcactf{G00D_EV4LUAT1ON}
 description: |-
   I'm learning JavaScript, and just created a calculator function! I didn't want to bother actually parsing the string bit-by-bit, though, and it's rather simple.

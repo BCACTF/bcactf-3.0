@@ -1,11 +1,11 @@
 name: Got libc?
 categories:
   - binex
-value: 150
+value: 200
 flag: 
   file: ./flag.txt
 description: |-
-  How far can you go with just one overflow
+  How far can you go with just one overflow?
 deploy:
   nc:
     expose: 9999/tcp

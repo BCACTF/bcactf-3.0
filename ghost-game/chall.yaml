@@ -1,7 +1,7 @@
 name: Ghost Game
 categories:
   - rev
-value: 50
+value: 75
 flag: bcactf{SE3DS_r_SP0O00OKY_7ICI3C}
 description: |-
   I love gaming in history class! This game is difficult to win though...

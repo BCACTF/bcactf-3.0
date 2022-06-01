@@ -1,7 +1,7 @@
 name: Really Secure Algorithm
 categories:
   - crypto
-value: 125
+value: 100
 flag: bcactf{w311_th15_15_aWkWard_Fbahu8d3}
 description: |-
   As BCA students, we are always pushing the limits of existing technologies!

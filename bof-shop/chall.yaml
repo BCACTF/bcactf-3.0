@@ -1,7 +1,7 @@
 name: BOF Shop
 categories:
   - binex
-value: 100
+value: 75
 flag:
   file: ./flag.txt
 description: |-

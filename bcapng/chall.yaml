@@ -1,7 +1,7 @@
 name: .bcapng
 categories:
   - foren
-value: 100
+value: 150
 flag: bcactf{B3Tt3r_tH4N_pnG_56jvCf9P}
 description: |-
   BCACTF's latest creation: an image file format! It can represent black and white pixels, and isn't too efficient.
