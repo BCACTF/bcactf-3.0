@@ -1,0 +1,14 @@
+name: Superglue
+categories:
+  - foren
+value: 125
+flag: bcactf{ch3_2_co_to_d155olv3}
+description: |-
+  I accidentally glued my images together. Please help!
+hints:
+  - Look for file headers.
+files:
+  - src: ./chall
+authors:
+  - Marvin
+visible: true
