@@ -1,7 +1,7 @@
 name: Convoluted
 categories:
   - rev
-value: 150
+value: 200
 flag: bcactf{20om_4nd_3nhance_705}
 description: |-
   My glasses are blurry. Can you help me read the flag?
