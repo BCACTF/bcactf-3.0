@@ -3,7 +3,7 @@ require("../db.php");
   
 if(!file_exists(DB_FILE)){
        	$user="admin";
-        $password="Bca4U";
+        $password="bca4";
         $salt="NaCl";
         $hash = md5($password.$salt);
 
