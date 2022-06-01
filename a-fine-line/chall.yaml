@@ -1,7 +1,7 @@
 name: A Fine Line
 categories:
   - crypto
-value: 100
+value: 175
 flag: bcactf{g2b_npjs3p4d65k1}
 description: |-
   I'm carefully drawing *a fine line* on this piece of paper, letting each portion guide the next...
