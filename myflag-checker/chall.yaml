@@ -1,0 +1,15 @@
+name: My Very Flag Checker
+categories:
+  - rev
+value: 150
+flag: bcactf{fl4G_Und3rL00keD_e7df9c}
+description: |-
+  Welcome to "My Very Flag Checker", run my program with the flag and it'll
+  tell you if it's correct!
+hints:
+  How do you *disassemble* this binary?
+files:
+  - src: ./whatisflag
+authors:
+  - Andrew
+visible: true
