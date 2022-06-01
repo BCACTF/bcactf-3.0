@@ -8,8 +8,8 @@ description: |-
   (Digits and letters are 0-9 and 10-35 in their usual orders, and the underscore is 36.
   {} are not encoded but should be added in afterwards. All letters are lowercase.)
 hints:
-  - This uses the affine cipher, as clued by the title and description.
-  - What's a convenient way to represent affine cipher keys? Remember, the plaintext should start with "bcactf".
+  - This uses the affine cipher, as clued by the title and description, but with an added modification.
+  - Each pair of letters decodes the next.
 files:
   - src: ./chall.txt
 authors:
