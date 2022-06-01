@@ -1,18 +1,14 @@
-name: permission denied
-
+name: Permission Denied
 categories:
   - misc
-
 value: 75
 flag: bcactf{th3_p0w3r_0f_s3tU1D_w0000_2309}
 description: I tried creating a filesystem to store my flag, but I must have messed something up... can you get my flag back?
-
 hints:
-  - can you even open the flag file?
+  - Can you even open the flag file?
 files:
   - src: mystery_files.zip
     name: mystery.zip
 authors:
-  - zsofia
-
+  - Zsofia
 visible: true
