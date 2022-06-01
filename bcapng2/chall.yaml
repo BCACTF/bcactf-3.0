@@ -1,7 +1,7 @@
 name: .bcapng2
 categories:
   - foren
-value: 175
+value: 200
 flag: bcactf{L4RG3_T3RNARY_NUM83R}
 description: |-
   This time, we support THREE colors! And we've reduced the file size by using raw binary.
