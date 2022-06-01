@@ -7,7 +7,7 @@ description: |-
   Welcome to "My Very Flag Checker", run my program with the flag and it'll
   tell you if it's correct!
 hints:
-  How do you *disassemble* this binary?
+  - How do you *disassemble* this binary?
 files:
   - src: ./whatisflag
 authors:
