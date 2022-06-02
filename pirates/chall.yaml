@@ -1,0 +1,16 @@
+name: Pirates
+categories:
+  - rev
+value: 125
+flag: bcactf{LoB5T3r_FoN!}
+description: |-
+  I tried pirating the flag off of [REDACTED], but I only got this file called "flag".
+  The encoding algorithm was leaked, could you decode the flag?
+hints:
+  - How does a Jpeg work?
+files:
+  - src: ./flag
+  - src: ./encode.py
+authors:
+  - Maxwell Gong
+visible: true

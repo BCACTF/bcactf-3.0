@@ -5,7 +5,7 @@
 int main() {
     char flag[FLAG_BUFFER];
     FILE *fp = NULL;
-    char name[24];
+    char name[16];
     int balance = 0;
     
     setbuf(stdout, NULL);
