@@ -57,7 +57,7 @@ $targetHash = md5(PASSWORD.SALT);
 // keep track of when the program starts so we can report elapsed time
 $startTime = microtime(true);
 // characters that can be used in forming a password
-$pwCharset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+$pwCharset = "abcdefghijklmnopqrstuvwxyz0123456789";
 $charsetSize=strlen($pwCharset);
 
 printf ("Examining all combinations of %d characters from the candidate character set:\n(%s)\nhashed with md5 with a salt of (%s) to see if any key results in a hash that matches %s.\nThis could take a while. Use 'nohup (command) &' to prevent the job from stopping if your terminal logs out or you lose your connection to the server.\n", PWLEN, $pwCharset, SALT, $targetHash);
