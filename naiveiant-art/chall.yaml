@@ -1,0 +1,13 @@
+name: Naiveiant Art
+categories:
+  - webex
+value: 250
+flag: bcactf{r3m1nd_m3_2_ch3ck_ur1_pr0t0c0l}
+description: |-
+  I made an art-sharing website!
+  I'm running a promotion where you can get your artwork to wider audiences! Nominate your favorite piece of art to have a change to win!
+files:
+  src.zip
+authors:
+  - skyskycally
+visible: true

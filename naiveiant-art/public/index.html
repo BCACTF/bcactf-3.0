@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaiveiantArt - Home</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: "Comic Sans MS";
+            display: flex;
+            background-color: blue;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+
+        #title {
+            font-size: 7rem;
+        }
+
+        .navigation-button {
+            
+            width: 15rem;
+            height: 7rem;
+
+            border-radius: 1rem;
+
+            display: inline-flex;
+            margin: 3rem;
+            padding: 0.5rem;
+
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            font-weight: bold;
+            font-size: 2rem;
+
+            text-decoration: none;
+
+            color: rgba(127, 0, 0, 255);
+        }
+
+        #gall {
+            background-color: rgba(0, 255, 255, 127);
+        }
+
+        #make {
+            background-color: rgba(0, 255, 0, 127);
+            /* color: rgba(255, 205, 225, 255); */
+        }
+    </style>
+
+</head>
+<body>
+    <h1 id="title">Welcome to NaiveiantArt!</h1>
+    <nav>
+        <a class="navigation-button" id="gall" href="/%%INSTANCEID%%/gallery"><div>Continue to the gallery</div></a>
+        <a class="navigation-button" id="make" href="/%%INSTANCEID%%/make"   ><div>Make your own art piece</div></a>
+    </nav>
+</body>
+</html>

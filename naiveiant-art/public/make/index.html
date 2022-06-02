@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaiveiantArt - Make</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .color-picker {
+            padding: 10px;
+        }
+        .name-picker {
+            padding: 20px;
+        }
+    </style>
+    <script>
+        let width = 20;
+        let height = 20;
+
+        let imageData;
+
+        let foregroundColor = "#000000";
+        let backgroundColor = "#FFFFFF";
+
+
+        function clip(number, low, high) {
+            return Math.min(high, Math.max(number, low));
+        }
+
+        function rcrt() {
+            const widthArr = Array(width).fill(null);
+            imageData = Array(height).fill(null).map(() => widthArr.map(() => false));
+        }
+        
+
+        function stBckgClr(event) {
+            backgroundColor = "#" + Math.abs(parseInt(event.target.value, 16) || 0).toString(16).padStart(6, "0");
+            document.getElementById("background").style.backgroundColor = backgroundColor;
+        }
+        
+        function stFgrdClr(event) {
+            foregroundColor = "#" + Math.abs(parseInt(event.target.value, 16) || 0).toString(16).padStart(6, "0");
+            rdrwCnvs();
+        }
+
+        function rdrwCnvs() {
+            let canvas = document.getElementById("foreground");
+            let ctx = canvas.getContext('2d');
+
+            ctx.canvas.width = width * 10;
+            ctx.canvas.height = height * 10;
+
+            ctx.fillStyle = foregroundColor;
+
+            ctx.clearRect(0, 0, width * 10, height * 10);
+
+            imageData.forEach((row, y) => row.forEach((enabled, x) => {
+                if (enabled) {
+                    ctx.fillRect(x * 10, y * 10, 10, 10);
+                }
+            }))
+        }
+
+        function colorStringToRGB(string) {
+            let int = parseInt(string.split("#").filter(Boolean)[0], 16);
+
+            return {
+                r: (int >> 0x10) & 0xFF,
+                g: (int >> 0x08) & 0xFF,
+                b: (int >> 0x00) & 0xFF,
+            };
+        }
+
+        function sndDta() {
+            const pixels = imageData.map((row, y) => row.map((enabled, x) => (enabled && {
+                x,
+                y,
+                color: colorStringToRGB(foregroundColor),
+            }))).flat().filter(Boolean);
+            const body = JSON.stringify({
+                size: {
+                    width,
+                    height,
+                },
+                bckgClr: colorStringToRGB(backgroundColor),
+                pixels,
+                name: document.getElementById("name").value,
+            });
+            console.log(body);
+            fetch("/%%INSTANCEID%%/submit_image", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body,
+                mode: 'same-origin',
+            })
+                .then(() => window.location.href = "/%%INSTANCEID%%/gallery")
+                .catch(alert);
+        }
+
+        function whenDown(event) {
+            if (event.buttons) {
+                imageData[clip(Math.floor(event.offsetY / 10), 0, height - 1)][clip(Math.floor(event.offsetX / 10), 0, width - 1)] = !event.shiftKey;
+                rdrwCnvs();
+            }
+        }
+        
+        function onBdLd() {
+            rcrt();
+            document.getElementById("bckg").addEventListener("input", stBckgClr);
+            document.getElementById("fgrd").addEventListener("input", stFgrdClr);
+            document.getElementById("submit").addEventListener("click", sndDta);
+            document.getElementById("foreground").addEventListener("mousedown", whenDown);
+            document.getElementById("foreground").addEventListener("mousemove", whenDown);
+            rdrwCnvs();
+            console.log("test");
+        }
+
+    </script>
+</head>
+<body onload="onBdLd()">
+    <div class="color-picker">Background color: #<input id="bckg"/></div>
+    <div class="color-picker">Foreground color: #<input id="fgrd"/></div>
+    <div class="name-picker">Name: <input id="name"/></div>
+
+    <button id="submit">Submit!</button>
+
+    <div id="background"><canvas id="foreground"></canvas></div>
+</body>
+</html>

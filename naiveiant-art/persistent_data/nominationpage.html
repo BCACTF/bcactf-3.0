@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function onTargetLoad() {
+            /**
+             * @type {HTMLIFrameElement}
+             */
+            const target_iframe = document.getElementById("target");
+            window.addEventListener("message", recievedGalleryImageMessage);
+            target_iframe.contentWindow.postMessage("send gallery image")
+        }
+        function recievedGalleryImageMessage(message) {
+            const data = message.data.imageData;
+            const title = message.data.title;
+
+            const admin_iframe = document.getElementById("admin");
+            window.addEventListener("message", recievedGalleryImageMessage);
+            admin_iframe.contentWindow.postMessage(message);
+        }
+    </script>
+</head>
+<body>
+    <iframe id="admin" src=%%ADMIN_PAGE_PATH%%></iframe>
+    <iframe id="target" onload="onTargetLoad()"></iframe>
+</body>
+</html>
