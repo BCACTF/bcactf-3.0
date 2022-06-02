@@ -1,0 +1,16 @@
+name: a Legit proteCtor of flaGs
+categories:
+  - rev
+value: 150
+flag: bcactf{g3neR4t1ng_th3_FU1UR3_50a93b}
+description: |-
+  I learned about a powerful way to generate pseudo random numbers on the fly - and I'm using them to encrypt
+  the flag! Crack the pseudo randomness, crack the flag.
+files:
+  - src: ./program.js
+  - src: ./output.txt
+hints:
+  - Challenge names are not random, what is this program doing to generate these numbers?
+authors:
+  - Andrew
+visible: true
