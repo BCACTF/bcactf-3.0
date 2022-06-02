@@ -1,0 +1,7 @@
+This is an affine cipher used in a way similar to an autokey cipher. Specifically, each
+pair of characters in the plaintext acts the key for the next two characters.
+As an example: "bc" is used as the key for "ac" by having the cipher be 11x+12 (mod 37), using
+our numeric values for characters, so the ciphertext has 11*10+12=11 (mod 37)="b" and 
+11*12+12=33 (mod 37)="x" as the first non-parenthesized pair. (The first pair is parenthesized 
+as it was not encoded.) Since 37 is prime, 1-36 will all be relatively prime to it, and "0" (0)
+is never used in the key so we don't have to worry about ambiguous decryption.
