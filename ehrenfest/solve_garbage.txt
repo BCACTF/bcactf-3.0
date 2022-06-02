@@ -1,0 +1,100 @@
+flag = b'Reaction and diffusion of chemical species can produce a variety of patterns, reminiscent of those often seen in nature. The Gray Scott equations model such a reaction. For more information on this chemical system see the articles "Complex Patterns in a Simple System," by John E. Pearson and "Pattern Formation by Interacting Chemical Fronts," by K.J. Lee, W.D. McCormick, Qi Ouyang, and H.L. Swinney. These articles appeared in Science, Volume 261, 9 July 1993.\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11'
+flag
+2 & 4
+2 & 77
+2 & 76
+2 & 75
+ibits = [[(2^i)&j for j in flag] for i in range(8)]
+ibits
+ibits = [[1 if i > 0 else 0] for i in ibits]
+ibits = [[1 if j > 0 else 0 for j in i] for i in ibits]
+ibits
+c= '00006163006900002061000020646966660000696f00200000006368006d0000616c000070656369650000636100200000006475006500002076000069657479200000207000740000006e73002000006d6900007363656e74000066200068000000206f00740000207300006e20696e20000074750065000000686500470000792000006f7474206500006174006f0000006d6f0065000073750000206120726500007469006e0000006f72006d000065200000666f726d6100006f6e006f000000686900200000656d0000616c2073790000656d00730000007468002000007469000065732022430000706c007800000074740072000020690000612053696d0000652000790000006d2c00200000204a00006e20452e2000006172006f0000006e6400220000747400006e20466f7200007469006e000000204900740000616300006e6720436800006963006c0000006f6e00730000206200004b2e4a2e200000652c0057000000204d004300006d6900002c205169200000796100670000006e64004800002e200000696e6e65790000546800730000007274006300007320000070656172650000696e00530000006e63002c00006f6c0000652032363100003920007500000031390033000011110000111111111100001111001100'
+bytes.from_hex(c)
+bytes.fromhex(c)
+c = _
+def chunks(l, n):
+    assert(len(l) % n == 0)
+    for i in range(0, len(l), n):
+        yield l[i:i+n]
+def encrypt(ptxt):
+    assert len(ptxt) == M_SIZE
+    enc = [0] * M_SIZE
+    for i in range(M_SIZE):
+        for j in range(M_SIZE):
+            if key[i][j] == 1:
+                enc[i] ^= ptxt[j]
+    return binascii.hexlify(bytes(enc))
+c = b''.join([encrypt(i) for i in chunks(flag, M_SIZE)])
+flag
+M_SIZE = 24
+c = b''.join([encrypt(i) for i in chunks(flag, M_SIZE)])
+A
+
+flag = 'bcactf{the-gray-scott-system-is-a-reaction-diffusion-system-8RCEGOUALMP}'
+assert(len(flag) == FLAG_LEN)
+# turn flag into a matrix
+inter_key = bin(int(flag.encode('ascii').hex(), 16))[2:].rjust(FLAG_LEN * 8, '0')
+key = [[int(c) for c in l] for l in chunks(inter_key, M_SIZE)]
+FLAG_LEN = len(flag)
+flag
+
+flag = 'bcactf{the-gray-scott-system-is-a-reaction-diffusion-system-8RCEGOUALMP}'
+assert(len(flag) == FLAG_LEN)
+# turn flag into a matrix
+inter_key = bin(int(flag.encode('ascii').hex(), 16))[2:].rjust(FLAG_LEN * 8, '0')
+key = [[int(c) for c in l] for l in chunks(inter_key, M_SIZE)]
+c = b''.join([encrypt(i) for i in chunks(flag, M_SIZE)])
+def encrypt(ptxt):
+    assert len(ptxt) == M_SIZE
+    enc = [0] * M_SIZE
+    for i in range(M_SIZE):
+        for j in range(M_SIZE):
+            if key[i][j] == 1:
+                enc[i] = enc[i] ^^ ptxt[j]
+    return binascii.hexlify(bytes(enc))
+c = b''.join([encrypt(i) for i in chunks(flag, M_SIZE)])
+flag
+history
+msg =  b'Reaction and diffusion of chemical species can produce a variety of patterns, reminiscent of those often seen in nature. The Gray Scott equations model such a reaction. For more information on this chemical system see the articles "Complex Patterns in a Simple System," by John E. Pearson and "Pattern Formation by Interacting Chemical Fronts," by K.J. Lee, W.D. McCormick, Qi Ouyang, and H.L. Swinney. These articles appeared in Science, Volume 261, 9 July 1993.\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11'
+c = b''.join([encrypt(i) for i in chunks(msg, M_SIZE)])
+import binascii
+c = b''.join([encrypt(i) for i in chunks(msg, M_SIZE)])
+c
+c = b'024274680e3f16196e3d43176b7d7f6e671a1833205372124f0e2c7c463e451c36365e19386a6323781e462231013f1b4c5625731d6204462375560e38737c7420105c6e6d0b6f4042553675122a570421654858283a637d7e5c1e747345370910056e2c176c060821284515337f3e2c74475f217309645d03497e1e072f20552d4c4809763777186e2550546a1f7b07491d7e751b2206513279125130667e246e4653667a046a42632e5d076274631a5d0638565f186b435675635274325c654a486c720b760d0d373f0b5661643430344f18723946750b1f4d316e4b7d00197d7a5a42392e747b310d587c6b543749293922174b1b3227477855587169782416594057051a17357f57371905045b787a556b3618083a436f327e1e556d25074b705c25740568765a6d326b415c793d0e2f773b497a365a60521b4403114d775744115f5f5e73387b35114d043371584958190e24456d5b4f21481c2c23547f5f31165b4832417b45612726415a5f25672d4e3a63732f586f4f26065965121e321f2547045d50126d19532e046c5440633437522b1567200a797947184b491f3d334f4a29017037176e443e0a2b6b5e561a03281e141f786052781d3f73081f2b48543d6e0860482e2e3f22063b242a170a062a00283b1d1724112231132a3b'
+cibits = [[(2^i)&j for j in flag] for i in range(8)]
+cibits = [[(2^i)&j for j in bytes.fromhex(c)] for i in range(8)]
+cibits = [[(2^i)&j for j in bytes.fromhex(c.decode('ascii'))] for i in range(8)]
+cibits
+cibits = [[1 if j > 0 else 0 for j in i] for i in cibits]
+cibits
+len(cibits[0])
+len(cibits)
+[i for j in cibits for i in chunks[j]]
+[i for j in cibits for i in chunks(j)]
+[i for j in cibits for i in chunks(j,8)]
+cibits = [i for j in cibits for i in chunks(j,8)]
+ibits = [i for j in ibits for i in chunks(j,8)]
+len(ibits)
+cibits = [i for j in cibits for i in j]
+cibits
+ibits = [i for j in ibits for i in j]
+MatrixSpace(GF(2))
+MatrixSpace(GF(2),24)
+ibits = [i for i in chunks(ibits, 24)]
+cibits = [i for i in chunks(cibits, 24)]
+len(ibits)
+MatrixSpace(GF(2),24,160)
+MS = _
+MS(ibits)
+MatrixSpace(GF(2),160,24)
+MST = _
+MST(ibits)
+MST(ibits).transpose()
+P = _
+C = MST(cibits).transpose()
+C.solve_left(P)
+P.solve_left(C)
+_.str()
+key
+history
