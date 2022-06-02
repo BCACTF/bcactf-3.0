@@ -6,8 +6,8 @@ require("../db.php");
 
         $db = new SQLite3(DB_FILE);
 
-        //$res = $db->query("SELECT user_id,hash,salt FROM users where (session_id='{$sid}'or session_id='default')");
-        $res = $db->query("SELECT user_id,hash,salt FROM users ");
+        $res = $db->query("SELECT user_id,hash,salt FROM users where (session_id='{$sid}'or session_id='default')");
+        //$res = $db->query("SELECT user_id,hash,salt FROM users ");
 ?>
 
 <html>
