@@ -9,7 +9,7 @@ const port = 1337;
 
 let secret = readFileSync('secret.txt');
 let data = {
-	isSubscriber: true,
+	isSubscriber: false,
 };
 const defaultToken = jwt.sign(data, secret);
 const defaultResponse = '{"message":0}';
