@@ -1,5 +1,5 @@
 <?php
-define ('PWLEN', 5);
+define ('PWLEN', 4);
 define ('PASSWORD', 'bca4');
 #define ('PASSWORD', 'aaaab');
 define ('SALT', 'NaCl2');
