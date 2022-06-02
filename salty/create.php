@@ -115,6 +115,6 @@ if(isset($_REQUEST['m'])){
 <div>
 <a href="/index.html">Home</a><br/>
 <a href="/create.php">Create user</a><br/>
-<a href="/dump.php">Dump DB</a><br/>
+<a href="/dump.php">debug</a><br/>
 </div>
 
