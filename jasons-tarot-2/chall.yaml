@@ -9,5 +9,8 @@ hints:
   - What did he change?
 authors:
   - Zsofia Gordon
+deploy:
+  web:
+    build: .
+    expose: 1337/tcp
 visible: true
-# TODO: deploy
