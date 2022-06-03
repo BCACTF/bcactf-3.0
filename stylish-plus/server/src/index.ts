@@ -20,6 +20,7 @@ for (let i = 0; i < chars.length - 1; i++) {
     chars[j] = temp;
 }
 const thePasscode = chars.join("");
+console.log(thePasscode);
 
 app.register(fastifyStatic, {
     root: join(dirname(fileURLToPath(import.meta.url)), "../../public"),
@@ -68,11 +69,11 @@ app.post<{ Body: Static<typeof Theme> }>("/api/report", async (request, reply) =
         const context = await (await browser).createIncognitoBrowserContext();
         const page = await context.newPage();
         await page.setCacheEnabled(false);
-        await page.goto(`http://localhost:3000/?id=${id}`, { waitUntil: "load", timeout: 1000 });
+        await page.goto(`http://localhost:3000/?theme=${id}`, { waitUntil: "load", timeout: 3000 });
         await page.click("#open-admin-panel");
 
         // Wait a bit to give everything some time to load
-        await new Promise(resolve => setTimeout(resolve, 100));
+        await new Promise(resolve => setTimeout(resolve, 1000));
 
         const passcode = thePasscode;
         for (let i = 0; i < passcode.length; i++) {
@@ -86,7 +87,7 @@ app.post<{ Body: Static<typeof Theme> }>("/api/report", async (request, reply) =
             })
             `);
             await page.click(`#${id}`);
-            await new Promise(resolve => setTimeout(resolve, 50));
+            await new Promise(resolve => setTimeout(resolve, 300));
         }
 
         const submitID = cuid();
@@ -98,7 +99,7 @@ app.post<{ Body: Static<typeof Theme> }>("/api/report", async (request, reply) =
         })
         `);
         await page.click(`#${submitID}`);
-        await new Promise(resolve => setTimeout(resolve, 100));
+        await new Promise(resolve => setTimeout(resolve, 3000));
 
         await page.close();
         await context.close();

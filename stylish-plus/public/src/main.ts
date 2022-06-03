@@ -44,12 +44,11 @@ function setPasscode(newPasscode: string) {
 }
 
 const wrongMessages = [
-    "You got it wrong. Try harder next time.",
-    "Can't get the passcode? That's a you problem.",
+    "Try harder next time.",
+    "That's a you problem.",
     "Hands off my passcode!",
     "You're not getting in.",
-    "Maybe if you bring me a box of ramen, I'll consider it.",
-    "Try mashing on the keyboard harder.",
+    "Mash on the keyboard harder.",
 ];
 
 async function reportToAdmin() {
