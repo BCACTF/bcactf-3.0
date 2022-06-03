@@ -4,7 +4,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import fastifyStatic from '@fastify/static';
 import cuid from 'cuid';
-import puppeteer from 'puppeteer';
+import puppeteer, { BrowserContext, Page } from 'puppeteer';
 import { readFileSync } from 'fs';
 
 const flag = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../../flag.txt"), "utf8");
@@ -65,9 +65,12 @@ app.post<{ Body: Static<typeof Theme> }>("/api/report", async (request, reply) =
     // Store the theme
     themes.set(id, request.body);
 
+    let context: BrowserContext | undefined;
+    let page: Page | undefined;
+
     try {
-        const context = await (await browser).createIncognitoBrowserContext();
-        const page = await context.newPage();
+        context = await (await browser).createIncognitoBrowserContext();
+        page = await context.newPage();
         await page.setCacheEnabled(false);
         await page.goto(`http://localhost:3000/?theme=${id}`, { waitUntil: "load", timeout: 3000 });
         await page.click("#open-admin-panel");
@@ -101,9 +104,6 @@ app.post<{ Body: Static<typeof Theme> }>("/api/report", async (request, reply) =
         await page.click(`#${submitID}`);
         await new Promise(resolve => setTimeout(resolve, 3000));
 
-        await page.close();
-        await context.close();
-
         reply.send("sure");
     } catch (e) {
         console.error(e);
@@ -111,6 +111,8 @@ app.post<{ Body: Static<typeof Theme> }>("/api/report", async (request, reply) =
     } finally {
         // Clean up
         themes.delete(id);
+        await page?.close();
+        await context?.close();
     }
 });
 
