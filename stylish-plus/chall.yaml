@@ -1,0 +1,21 @@
+name: Stylish+
+categories:
+  - webex
+value: 250
+flag:
+  file: ./flag.txt
+description: |-
+  The return of Stylish.
+
+  (Note that this challenge contains its own admin bot.)
+hints:
+  - Your selectors are powerless now. And no, that's not an afterthought.
+authors:
+  - anli
+files:
+  - src: stylish-plus.zip # I'm sorry
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
+visible: true
