@@ -1,0 +1,13 @@
+name: Broken Image
+categories:
+  - foren
+value: 50
+flag: bcactf{br0k3n_1m4g3_4nd_1m4g3_4nd_1m4g3}
+description: |-
+  My friend said that he made a really cool drawing in MS Paint but I can't open it!
+  Maybe my computer is broken? Or the image? I really don't know. Could you try opening it for me and telling me what it is?
+files:
+  - src: ./chall.svg
+authors:
+  - Krish
+visible: true
