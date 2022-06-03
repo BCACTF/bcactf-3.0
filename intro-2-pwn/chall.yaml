@@ -1,0 +1,17 @@
+name: Intro 2 Pwn
+categories:
+  - binex
+value: 50
+flag:
+  file: ./flag.txt
+description: |-
+  So... you want to learn how to pwn?
+hints:
+  - Remember to install netcat
+deploy:
+  nc:
+    build: .
+    expose: 9999/tcp
+authors:
+  - Andrew
+visible: true
