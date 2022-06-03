@@ -1,13 +1,29 @@
 <?php
+define('DEBUG', 0);
 require("../db.php");
+
 	while(($sid = session_id()) == null){
         session_start();
         }
 
-        $db = new SQLite3(DB_FILE);
+	if (DEBUG) {
+		if (!($fp = fopen('dump.log', 'a'))){
+			die("Unable to open dump.log");
+		}
+	}
+        //$db = new SQLite3(DB_FILE);
+	if (!($db = new mysqli(DB_HOST, DB_USER, DB_PASS))){
+		die("Dump: Unable to connect to database");
+	}
 
-        $res = $db->query("SELECT user_id,hash,salt FROM users where (session_id='{$sid}'or session_id='default')");
-        //$res = $db->query("SELECT user_id,hash,salt FROM users ");
+	$query = "SELECT username, hash, salt FROM salty.users where (session_id = '".$sid."' or session_id='default');";
+	if (DEBUG) fprintf($fp, "dump query:%s\n", $query);
+
+	$result = $db->query($query);
+	if (!$result){
+		die("Dump: query fails");
+	}
+       //$res = $db->query("SELECT user_id,hash,salt FROM users ");
 ?>
 
 <html>
@@ -18,14 +34,16 @@ require("../db.php");
 				<td>username</td><td>password</td><td>salt</td></tr>
 
 <?php
-        while ($row = $res->fetchArray()) {
-           echo "<tr><td>{$row['user_id']}</td><td>{$row['hash']}</td><td>{$row['salt']}</td></tr>";
-        }
-?>   
-</table>	
-
-<div>
-<a href="/index.html">Home</a><br/>
-<a href="/create.php">Create user</a><br/>
-<a href="/dump.php">debug</a><br/>
-</div>
+//while ($row = $result->fetchArray()) {
+        while ($row = $result->fetch_assoc()) {
+                echo "<tr><td>{$row['username']}</td><td>{$row['hash']}</td><td>{$row['salt']}</td></tr>";
+             }
+     ?>   
+     </table>	
+     
+     <div>
+     <a href="/index.php">Home</a><br/>
+     <a href="/create.php">Create user</a><br/>
+     <a href="/dump.php">Dump DB</a><br/>
+     </div>
+     
