@@ -7,7 +7,10 @@ interface Theme {
     accentFG: string;
 }
 
+let theme: Theme;
+
 function setTheme({bodyBG, bodyFG, accentBG, accentFG}: Theme) {
+    theme = {bodyBG, bodyFG, accentBG, accentFG};
     document.getElementById("style")!.innerText = `
         :root {
             --body-bg: ${bodyBG};
@@ -49,6 +52,22 @@ const wrongMessages = [
     "Try mashing on the keyboard harder.",
 ];
 
+async function reportToAdmin() {
+    const response = await fetch("/api/report", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(theme),
+    });
+
+    if (response.status === 200) {
+        alert("The admin was not very impressed.");
+    } else {
+        alert("The admin was *very* not impressed.");
+    }
+}
+
 async function submitPasscode() {
     const title = document.getElementById("admin-modal-title")!;
     title.innerText = "Submitting...";
@@ -80,45 +99,20 @@ async function submitPasscode() {
     }
 }
 
-async function expressApproval() {
-    const button = document.getElementById("express-approval")! as HTMLButtonElement;
-    button.disabled = true;
-
-    const title = document.getElementById("admin-modal-title")!;
-    title.innerText = "Expressing approval...";
-
-    try {
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get("id");
-        if (!id) throw new Error("No ID");
-        const { status } = await fetch(`/api/approve/${id}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                flag,
-            }),
-        });
-
-        if (status !== 200) throw new Error(`Unexpected response status: ${status}`);
-
-        title.innerText = "Approval expressed!";
-    } catch (e) {
-        title.innerText = "Couldn't express approval.";
-        console.error(e);
-    }
-    
-    button.disabled = false;
-}
-
 function showFlag() {
     alert(flag!);
 }
 
 window.addEventListener("load", () => {
+    setTheme({
+        bodyBG: "white",
+        bodyFG: "black",
+        accentBG: "black",
+        accentFG: "white",
+    });
+
     document.getElementById("algorithm")!.addEventListener("click", summonTheAlgorithm);
-    document.getElementById("express-approval")!.addEventListener("click", expressApproval);
+    document.getElementById("report-to-admin")!.addEventListener("click", reportToAdmin);
     document.getElementById("show-flag")!.addEventListener("click", showFlag);
 
     const buttons = [
@@ -169,4 +163,25 @@ window.addEventListener("load", () => {
     document.head.appendChild(keypadStyle);
 
     MicroModal.init();
+
+    if (window.location.search) {
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("theme");
+        if (id) {
+            (async () => {
+                try {
+                    const response = await fetch(`/api/theme/${id}`);
+                    if (response.status === 200) {
+                        const theme = await response.json();
+                        setTheme(theme);
+                    } else {
+                        throw new Error(`Bad status: ${response.status}`);
+                    }
+                } catch (e) {
+                    console.error(e);
+                    alert("Couldn't fetch theme");
+                }
+            })();
+        }
+    }
 });

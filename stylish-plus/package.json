@@ -5,12 +5,15 @@
   "scripts": {
     "build:client:ts": "tsc -p public/tsconfig.json",
     "build:client:css": "tailwindcss -c tailwind.config.cjs -i ./public/src/main.css -o ./public/dist/main.css",
-    "build:server": "tsc -p server/tsconfig.json"
+    "build:server": "tsc -p server/tsconfig.json",
+    "start": "node server/dist/index.js"
   },
   "dependencies": {
+    "@fastify/static": "^5.0.2",
     "@sinclair/typebox": "^0.23.4",
-    "eta": "^1.12.3",
-    "fastify": "^3.27.4"
+    "cuid": "^2.1.8",
+    "fastify": "^3.27.4",
+    "puppeteer": "^14.2.1"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",
