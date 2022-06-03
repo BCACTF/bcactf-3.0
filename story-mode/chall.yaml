@@ -1,7 +1,7 @@
 name: "BCACTF 3.0: Story Mode"
 categories:
   - webex
-value: 150
+value: 175
 flag: bcactf{the_envd_jZNCCrTgxR237loZY12JlA}
 description: |-
   bestselling novel

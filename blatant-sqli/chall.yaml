@@ -1,7 +1,7 @@
 name: Blatant SQLi
 categories:
   - webex
-value: 150
+value: 175
 flag:
   file: flag.txt
 description: |-
