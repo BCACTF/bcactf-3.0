@@ -12,3 +12,7 @@ files:
   - src: Sources/App/routes.swift
 authors:
   - anli
+deploy:
+   web:
+     build: .
+     expose: 8080/tcp
