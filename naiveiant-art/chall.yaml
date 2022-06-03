@@ -7,7 +7,7 @@ description: |-
   I made an art-sharing website!
   I'm running a promotion where you can get your artwork to wider audiences! Nominate your favorite piece of art to have a change to win!
 files:
-  src.zip
+  - src.zip
 authors:
   - skyskycally
 visible: true

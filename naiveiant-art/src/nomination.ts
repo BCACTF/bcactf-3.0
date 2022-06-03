@@ -6,8 +6,7 @@ const admin_panel_creds = JSON.parse(readFileSync("private_data/secret_admin_pan
 
 export default async function nominateArtwork(url: string, instanceid: string): Promise<void> {
     const browser = await puppeteer.launch({
-        headless: false,
-        args: [ "--enable-popup-blocking", "--auto-open-devtools-for-tabs" ],
+        args: [ "--enable-popup-blocking", "--auto-open-devtools-for-tabs", "--no-sandbox", "--incognito" ],
     });
 
     const page = await browser.newPage();
