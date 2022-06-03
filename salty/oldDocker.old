@@ -1,0 +1,21 @@
+FROM --platform=linux/amd64 ubuntu@sha256:86ac87f73641c920fb42cc9612d4fb57b5626b56ea2a19b894d0673fd5b4f2e9
+ENV DEBIAN_FRONTEND=noninteractive
+EXPOSE 80
+# Expects the install package to be in /usr/local/salty
+# install required packages
+RUN apt update -y && \
+    apt install -y apache2 php libapache2-mod-php 
+
+# don't clobber the existing html folder
+WORKDIR /var/www
+RUN if [ -d html ]; then mv html html.backup; fi
+RUN if [ -l html ]; then unlink html; fi
+RUN ln -s /usr/local/salty /var/www/html
+
+
+# Initialize salty.db and ensure permissions are set
+WORKDIR /usr/local/salty
+COPY html html
+RUN chown :www-data -R html
+RUN chmod 0660 -R html
+CMD apachectl -D FOREGROUND
