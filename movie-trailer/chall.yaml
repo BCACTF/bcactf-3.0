@@ -11,3 +11,4 @@ files:
   - src: ./trailer.mov
 authors:
   - anli
+visible: true
