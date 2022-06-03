@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>blatant sqli</title>
+</head>
+
+<body>
+  <img src="/yusuf.png" style="max-width: 100%;" />
+  <h1>#(result)</h1>
+</body>
+</html>
