@@ -9,5 +9,10 @@ hints:
   - How might the website keep track of if a user is subscribed?
 authors:
   - Zsofia Gordon
+deploy:
+  web:
+    build: .
+    expose: 1337/tcp
+
 visible: true
-# TODO: deploy
+

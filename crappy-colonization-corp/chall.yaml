@@ -6,8 +6,7 @@ value: 225
 flag: 
   file: ./flag.txt
 files:
-  - src: ./src/main.rs
-    dest: main.rs
+  - src: ./provided.rs
 description: |-
   Yay, we finally got someone to Mars!
   It's bureaucracy time!
@@ -15,6 +14,10 @@ hints:
   - Your IGUID is not used as an index into the hashmap. Only the result of the "proprietary algorithm" is used.
   - Although your IGUID is not used as an index into the hashmap... it is still stored as a vector of bytes in "used_keys".
   - How proprietary is this "proprietary algorithm", anyway?
+deploy:
+  nc:
+    build: .
+    expose: 9999/tcp
 authors:
   - Sky Calaman
 visible: true
