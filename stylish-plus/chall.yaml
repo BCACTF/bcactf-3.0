@@ -3,7 +3,7 @@ categories:
   - webex
 value: 250
 flag:
-  file: ./server/flag.txt
+  file: ./flag.txt
 description: |-
   The return of Stylish.
 
@@ -17,5 +17,5 @@ files:
 deploy:
   web:
     build: .
-    expose: 3000
+    expose: 3000/tcp
 visible: true
