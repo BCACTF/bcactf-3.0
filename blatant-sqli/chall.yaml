@@ -1,0 +1,14 @@
+name: Blatant SQLi
+categories:
+  - webex
+value: 150
+flag:
+  file: flag.txt
+description: |-
+  blah blah blah something something yusuf are you happy now
+hints:
+  - What kind of feedback does the server give?
+files:
+  - src: Sources/App/routes.swift
+authors:
+  - anli

@@ -7,6 +7,7 @@ FROM swift:5.6-focal as build
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
     && apt-get -q update \
     && apt-get -q dist-upgrade -y \
+    && apt-get install -y libsqlite3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Set up a build area
@@ -38,6 +39,7 @@ RUN find -L "$(swift build --package-path /build -c release --show-bin-path)/" -
 # Ensure that by default, neither the directory nor any of its contents are writable.
 RUN [ -d /build/Public ] && { mv /build/Public ./Public && chmod -R a-w ./Public; } || true
 RUN [ -d /build/Resources ] && { mv /build/Resources ./Resources && chmod -R a-w ./Resources; } || true
+RUN mv /build/flag.txt ./flag.txt && chmod -R a-w ./flag.txt
 
 # ================================
 # Run image
@@ -46,7 +48,7 @@ FROM ubuntu:focal
 
 # Make sure all system packages are up to date.
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
-    apt-get -q update && apt-get -q dist-upgrade -y && apt-get -q install -y ca-certificates tzdata && \
+    apt-get -q update && apt-get -q dist-upgrade -y && apt-get -q install -y ca-certificates tzdata sqlite3 && \
     rm -r /var/lib/apt/lists/*
 
 # Create a vapor user and group with /app as its home directory
