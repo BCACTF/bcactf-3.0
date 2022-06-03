@@ -1,0 +1,13 @@
+name: "BCACTF 3.0: The Movie"
+categories:
+  - foren
+value: 150
+flag: bcactf{im_sorry_1l11l1l1l11l}
+description: |-
+  A terrible movie remake of BCACTF? What's not to like?!
+hints:
+  - The trailer's all black... or is it?
+files:
+  - src: ./trailer.mov
+authors:
+  - anli
