@@ -1,0 +1,34 @@
+name: Ode to a Replaced Cable
+categories:
+  - foren
+value: 150
+flag: bcactf{a-universal-language-b49a}
+# Alternatively:
+# flag:
+#   file: ./flag.txt
+# 
+description: |-
+  I just spent a bunch of money on an amazing piano keyboard,
+  but I didn't realize I can't connect it directly to my PC!
+  I then spent a bunch more money on an audio interface,
+  but there was this STUPID ANNOYING BUZZING SOUND whenever I recorded something.
+  I then spent even more money on a cable to replace it (actually only $6.60, it was on sale!)
+  and now there's barely any buzzing left!
+  
+  With this new equipment, I wrote a song to my friend in France.
+  He doesn't speak English, but they say music is a universal language,
+  so we jam together sometimes! Also, don't try to analyze the buzzing sound.
+  It's genuinely not supposed to be there, and it's not a part of the problem.
+  Actually, if you do know what's causing it, please DM me. I'm pretty desparate at this point.
+  Anyways, I hope you like the song!
+  
+hints:
+  - Seriously, the buzzing isn't part of the problem. Stop trying to analyze it.
+  - I mean it, there's actually nothing to analyze with the buzzing.
+  - STOP ANALYZING THE BUZZING
+files:
+  - src: ./ode-to-a-cable.mp3
+authors:
+  - eiis1000
+visible: true
+# TODO: deployment
