@@ -1,12 +1,16 @@
 import React from 'react';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Home from "./Home";
+import LogIn from './LogIn';
 
 function App() {
     return (
-        <div className="App">
-            <h1>Welcome to Bloodthirsty Breeze! 🧛‍♀️</h1>
-            <h2>Your one-stop shop for all your bloody needs!</h2>
-        </div>
+        <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/log-in" element={<LogIn/>}/>
+            {/* <Route path="/sign-up" element={<SignUp/>}/> */}
+        </Routes>
     );
 }
 
