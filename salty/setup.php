@@ -7,7 +7,7 @@
         $salt="NaCl";
         $hash = md5($password.$salt);
 
-        $db = new SQLite3(DB_FILE);
+        $db = new SQLite3(salty.db);
 
         $db->exec("drop table if exists users;");
         $db->exec("create table users (session_id char(255), user_id char(255), hash char(255), salt char(255))");
