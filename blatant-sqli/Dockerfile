@@ -1,7 +1,7 @@
 # ================================
 # Build image
 # ================================
-FROM swift:5.6-focal as build
+FROM --platform=linux/amd64 swift:5.6-focal as build
 
 # Install OS updates and, if needed, sqlite3
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
@@ -44,7 +44,7 @@ RUN mv /build/flag.txt ./flag.txt && chmod -R a-w ./flag.txt
 # ================================
 # Run image
 # ================================
-FROM ubuntu:focal
+FROM --platform=linux/amd64 ubuntu:focal
 
 # Make sure all system packages are up to date.
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
