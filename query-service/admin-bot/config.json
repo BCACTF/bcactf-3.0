@@ -1,0 +1,11 @@
+{
+    "cookies": [
+        {
+            "name": "flag",
+            "value": "bcactf{SUBM1TT3D_QUE5TI0NABL3_L1NK}"
+        }
+    ],
+    "redirectConsoleOutput": true,
+    "challengeName": "Query Service",
+    "timeout": 5000
+}

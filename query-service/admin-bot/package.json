@@ -1,0 +1,18 @@
+{
+  "name": "admin-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "kna27",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.3",
+    "hbs": "^4.2.0",
+    "puppeteer": "^14.1.1"
+  }
+}
