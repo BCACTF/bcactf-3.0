@@ -10,15 +10,13 @@ description: |-
   wrong. Look it up! Don't be lazy. Take control of your own future. Also, go read
   the Gray-Scott problem for context.
   
-  Decode this flag, encoded with a secret key: 5846353541255b46652543007d776b6c3a49
-  04233b0e2155445375275974105e64740d112d37687f3a48446825173b025e093a254c7a445138610
-  44b6b236a242e13597f221824121d167c35142d5e586c36110925237e713f5500732d46624a7f4058
-  4a743f5c3a293b660d235571163167131e71063e41
+  Decode the encoded flag, which used a secret key.
 hints:
   - What's special about matrices? Something to do with... lines?
   - How can you use the given encoded messages to decode messages?
   - How much data is actually lost in this encoding?
 files:
+  - src: encodedflag.txt
   - src: gs1.py
   - src: gray.txt
 authors:
