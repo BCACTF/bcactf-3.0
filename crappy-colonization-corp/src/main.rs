@@ -4,6 +4,8 @@ use std::io::{ stdin, Stdin, Write };
 use std::thread::sleep;
 use std::time::{ SystemTime, UNIX_EPOCH, Duration };
 use std::panic;
+use md5::compute as proprietary_algorithm;
+// good luck :)
 
 static START_TEXT: &str = r#"
 You're one of the first people to begin mars's colonization!

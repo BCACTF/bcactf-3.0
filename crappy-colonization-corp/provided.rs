@@ -1,8 +1,9 @@
 use std::collections::{ HashMap, HashSet };
 use std::num::ParseIntError;
-use std::io::{ stdin, Stdin };
-use std::time::{ SystemTime, UNIX_EPOCH };
-// use ******** as proprietary_algorithm;
+use std::io::{ stdin, Stdin, Write };
+use std::thread::sleep;
+use std::time::{ SystemTime, UNIX_EPOCH, Duration };
+// use ******* as proprietary_algorithm;
 // good luck :)
 
 static START_TEXT: &str = r#"

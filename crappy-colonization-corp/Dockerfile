@@ -10,7 +10,8 @@ COPY flag.txt .
 COPY ynetd .
 
 RUN chown -R root:root /home/ctf
-RUN chmod +x ctf_problem 
+RUN chmod +x ./ctf_problem 
+RUN chmod +x ./ynetd
 
 USER ctf
 EXPOSE 9999

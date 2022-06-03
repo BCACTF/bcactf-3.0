@@ -6,7 +6,7 @@ value: 225
 flag: 
   file: ./flag.txt
 files:
-  - src: ./provided.rs
+  - src: provided.rs
 description: |-
   Yay, we finally got someone to Mars!
   It's bureaucracy time!
