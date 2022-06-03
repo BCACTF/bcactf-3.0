@@ -14,7 +14,7 @@ function createUser($username, $password, $sid){
 	global $fp;
 	if (DEBUG) fprintf($fp, "createUser(u:%s, p:%s, s:%s)\n", $username, $password, $sid);
 
-	$db = new SQLite3(salty.db);
+	$db = new SQLite3(DB_FILE);
 	if(!$db){
 		die("Unable to create database connection in create");
 	}
