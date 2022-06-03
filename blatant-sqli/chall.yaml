@@ -16,3 +16,4 @@ deploy:
    web:
      build: .
      expose: 8080/tcp
+visible: true
