@@ -1,7 +1,7 @@
 name: Salty
 categories:
   - crypto
-value: 200
+value: 150
 flag: bcactf{1_10v3_5a1ty_h@5h_br0wn5_3749}
 description: |-
   I found the flag factory!!! They keep their flags locked up. But I have insider info that they only use 4 digit alphanumeric passwords in lowercase. Can you get a flag?
