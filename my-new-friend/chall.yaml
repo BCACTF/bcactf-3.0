@@ -1,0 +1,13 @@
+name: My New Friend
+categories:
+  - foren
+value: 75
+flag: 
+  bcactf{h15_n4m3_15_g3rb3rt_4798jU}
+description: |-
+  This is my new pen pal! He sent me this handsome picture of himself. Unfortunately, I forgot his name. Can you help me figure it out?
+files:
+  - src: ./zimage.png
+authors:
+  - Zsofia
+visible: true
