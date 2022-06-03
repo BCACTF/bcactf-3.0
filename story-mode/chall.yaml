@@ -1,0 +1,20 @@
+name: "BCACTF 3.0: Story Mode"
+categories:
+  - webex
+value: 150
+flag: bcactf{the_envd_jZNCCrTgxR237loZY12JlA}
+description: |-
+  bestselling novel
+hints:
+  - How does this advanced paging technology work, anyway?
+  - Linux sure does have an interesting set of features...
+files:
+  - src: project.clj
+  - src: src/story_mode/core.clj
+authors:
+  - anli
+visible: true
+deploy:
+   web:
+     build: .
+     expose: 3000/tcp
