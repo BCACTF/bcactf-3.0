@@ -1,0 +1,28 @@
+This is "Salty" an exercise to gain access to a user account by building your own rainbow table.
+
+To simplify deployment, this project uses SESSION DATA instead of a true database. Everything is preserved in the user session.
+There is no persistence if the user closes their browser tab and comes back later, but that's not essential to the problem.
+
+The objective of the problem is for the user to figure out they need to build a custom rainbow table for a salted md5 hash to crack the admin password and access the flag.
+
+Site user 'admin' has special privileges, including access to the CTF flag.
+The salted hash of each user's password is stored in the 'database'. Therefore, it is not possible
+to get the password from the database, nor is it possible to use an off-the-shelf rainbow table.
+
+The user CAN create an account and CAN view the database (we accidentally leave some 'debug' output visible to clue them in.)
+By creating an account, knowing their own password, and observing the salt that is assigned to them, the user 
+can easily deduce the password hashing algorithm. (Hash = md5(password.salt))
+
+From there, the user can write a short routine to enumerate all possible passwords for the admin account, using the admin's salt.
+Fortunately, the admin password is short and not very complex, so a user can find a proposed admin password that hashes to the correct
+hash within a few tens of minutes.
+
+With the admin password, the user can log in and obtain the CTF Flag.
+
+INSTALLATION
+
+1. The project requires only 1 html file and 1 php file
+2. The problem requires apache2, php, libapaache2-php-mod
+3. The Docker script will create a link from /var/www/html to the html/ folder of the deploy package.
+4. You should edit html/home.php to set the desired admin password and CTF flag values.
+5. As a test, you can run solvepath.php. Edit the php file to confirm you are searching for the right admin password and using the right password length and salt. This routine will enumarate all possible N-character passwords until the hashed value md5(password.salt) equals the hashed value for the (known in this case) admin password. The routines reports assumptions and progress.  If the password length or target changes, you can change easily identified values in the code.

@@ -1,0 +1,15 @@
+name: Salty
+categories:
+  - crypto
+value: 100
+flag: bcactf{1_10v3_5a1ty_h@5h_br0wn5_3749}
+description: |-
+  I found the flag factory!!! They keep their flags locked up. But I have insider info that they only use 4 digit alphanumeric passwords in lowercase. Can you get a flag?
+hints:
+  - Looks like a careless programmer left a debug table behind...
+  - Hmmm, that's not the password you put in...
+  - Don't bruteforce passwords on the website...
+authors:
+  - Zsofia Gordon
+visible: true
+# TODO: deploy
