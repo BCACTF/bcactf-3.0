@@ -1,0 +1,16 @@
+name: real deal html
+categories:
+  - webex
+value: 50
+flag: bcactf{tH4TZ_D4_R34l_D3Al_cb8949}
+description: |-
+  I have just made the most ultimate html site. This site, this html. This is the real deal
+hints:
+  - What can be hiding in your web page? And where
+authors:
+  - Andrew
+deploy:
+  web:
+    build: .
+    expose: 80/tcp
+visible: true
