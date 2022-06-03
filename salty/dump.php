@@ -4,7 +4,7 @@ require("../db.php");
         session_start();
         }
 
-        $db = new SQLite3(DB_FILE);
+        $db = new SQLite3(salty.db);
 
         $res = $db->query("SELECT user_id,hash,salt FROM users where (session_id='{$sid}'or session_id='default')");
         //$res = $db->query("SELECT user_id,hash,salt FROM users ");
