@@ -1,9 +1,9 @@
 use std::collections::{ HashMap, HashSet };
 use std::num::ParseIntError;
-use std::io::{ stdin, Stdin };
-use std::time::{ SystemTime, UNIX_EPOCH };
-use md5::compute as proprietary_algorithm;
-
+use std::io::{ stdin, Stdin, Write };
+use std::thread::sleep;
+use std::time::{ SystemTime, UNIX_EPOCH, Duration };
+use std::panic;
 
 static START_TEXT: &str = r#"
 You're one of the first people to begin mars's colonization!
@@ -68,6 +68,8 @@ static PRE_REGISTERED_ACCOUNTS: [&str; 5] = [
 
 /// Spaghetti code lol
 fn main() {
+    panic::set_hook(Box::new(panic_hook));
+
     let flag: String = get_flag();
 
     let mut used_iguids = HashSet::new();
@@ -236,4 +238,24 @@ pub fn base64_decode(input: &str) -> Vec<u8> {
 
 fn sanitize_to_string<'a>(input: impl IntoIterator<Item = &'a u8>) -> String {
     String::from_utf8_lossy(&input.into_iter().cloned().filter(|byte| !char::is_ascii_control(&(*byte as char))).collect::<Vec<_>>()).to_string()
+}
+
+fn panic_hook(panic_info: &panic::PanicInfo) {
+    println!("{:#?}", panic_info);
+    sleep(Duration::from_secs(3));
+    println!("AHHH THE PAIN");
+    sleep(Duration::from_secs(3));
+    println!("IT'S UNBEARABLE");
+    sleep(Duration::from_secs(3));
+    print!("Shutting down");
+    std::io::stdout().flush().unwrap();
+    sleep(Duration::from_secs(2));
+    
+    for _ in 0..20 {
+        print!(".");
+        std::io::stdout().flush().unwrap();
+        sleep(Duration::from_secs_f32(0.5));
+    }
+    println!();
+    println!("Successfully shut down.");
 }
