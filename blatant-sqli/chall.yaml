@@ -9,7 +9,7 @@ description: |-
 hints:
   - What kind of feedback does the server give?
 files:
-  - src: Sources/App/routes.swift
+  - src: ./Sources/App/routes.swift
 authors:
   - anli
 deploy:

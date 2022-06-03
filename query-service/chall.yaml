@@ -1,7 +1,7 @@
 name: Query Service
 categories:
   - webex
-value: 100
+value: 175
 flag: bcactf{SUBM1TT3D_QUE5TI0NABL3_L1NK}
 description: |-
   I've made a little website to access a SQL database.

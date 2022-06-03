@@ -1,7 +1,7 @@
 name: a Legit proteCtor of flaGs
 categories:
   - rev
-value: 150
+value: 175
 flag: bcactf{g3neR4t1ng_th3_FU1UR3_50a93b}
 description: |-
   I learned about a powerful way to generate pseudo random numbers on the fly - and I'm using them to encrypt

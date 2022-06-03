@@ -1,7 +1,7 @@
-name: Jason's Tarot
+name: Jason's Web Tarot
 categories:
   - webex
-value: 100
+value: 125
 flag: bcactf{n0_s3cr3t5????!!!?!_38893}
 description: |-
   I just found this amazing tarot card website! Legend has it that if you can subscribe to Jason's tarot service, he'll give you a free flag! Sadly, he closed down the subscription section of the site. Can you get me my flag?

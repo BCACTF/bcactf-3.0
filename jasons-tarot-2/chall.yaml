@@ -1,7 +1,7 @@
-name: Jason's Tarot 2
+name: Jason's Web Tarot 2
 categories:
   - webex
-value: 150
+value: 175
 flag: bcactf{hm@c_256_yeeeeah_24u9402}
 description: |-
   I think Jason realized his last attempt at making a tarot website wasn't super secure... so he tightened his security a bit. I still really want that flag though...

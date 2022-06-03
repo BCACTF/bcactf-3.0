@@ -1,7 +1,7 @@
 name: Chessy
 categories:
   - crypto
-value: 100
+value: 125
 flag: bcactf{3n_pa5sen7_ch3ckm4t3_92aj32lm9ui}
 description: |-
   I've been learning a bit of chess recently.
