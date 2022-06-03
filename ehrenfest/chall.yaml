@@ -1,7 +1,7 @@
 name: Ehrenfest
 categories:
   - crypto
-value: 225
+value: 250
 flag: bcactf{the-next-problem-requires-you-to-figure-out-what-the-encryption-key-i-used-was-so-have-fun-with-that-43b245}
 description: |-
   I wrote this problem after Gray-Scott, and I wanted to keep the code the same,
