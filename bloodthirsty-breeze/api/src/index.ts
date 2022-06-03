@@ -116,3 +116,5 @@ server.get("/api/menu", async (req, res) => {
 });
 
 server.use(serveStatic("./build"));
+
+server.listen(3000);
