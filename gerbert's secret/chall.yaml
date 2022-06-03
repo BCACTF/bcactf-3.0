@@ -4,11 +4,11 @@ categories:
 value: 150
 flag: bcactf{g3rb3rt_w4s_4_bu11fr0g_2139}
 description: |-
-	This is my best friend Gerbert. He insists that he's a human like me, but I think he's hiding something. Anyways, he sent me this picture of himself. Can you help me find his secret?
+  This is my best friend Gerbert. He insists that he's a human like me, but I think he's hiding something. Anyways, he sent me this picture of himself. Can you help me find his secret?
 hints:
   - Maybe take a closer look at the picture. Like, much closer.
 files:
-  - src: ./zgerbert.png
+  - src: ./zgerberts.png
 authors:
   - Zsofia
 visible: true
