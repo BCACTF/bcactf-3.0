@@ -12,6 +12,14 @@ hints:
 authors:
   - Marvin
 visible: true
+deploy:
+  web:
+    build: .
+    expose: 80/tcp
+  admin:
+    build: ./admin-bot/
+    expose: 3000/tcp
+
 # Implementation notes: Hide the fact that this is an XSS challenge (the SQL table says
 # "submit link to admin bot at [LINK]" right now, placeholder should be changed).
 # Not entirely sure how to get output from the bot, but I assume y'all will figure that out
