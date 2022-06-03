@@ -10,6 +10,7 @@ description: |-
   I'm not too good at it yet though, but I think you might be able to show me how it's done!  
 hints:
   - You gotta return 2 win...
+  - Remember, this is a 64 bit system
 deploy:
   nc:
     build: .
