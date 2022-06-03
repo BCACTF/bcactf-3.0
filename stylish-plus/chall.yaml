@@ -6,6 +6,8 @@ flag:
   file: ./server/flag.txt
 description: |-
   The return of Stylish.
+
+  (Note that this challenge contains its own admin bot.)
 hints:
   - Your selectors are powerless now. And no, that's not an afterthought.
 authors:
