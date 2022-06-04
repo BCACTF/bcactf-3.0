@@ -11,3 +11,7 @@ files:
 authors:
   - skyskycally
 visible: true
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
