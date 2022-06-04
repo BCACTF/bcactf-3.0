@@ -11,7 +11,7 @@ RUN apt-get update -y \
     --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 COPY package*.json ./
-RUN npm ci \
+RUN npm install \
     # Add user so we don't need --no-sandbox.
     # same layer as npm install to keep re-chowned files from using up several hundred MBs more space
     && groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
@@ -25,4 +25,4 @@ RUN npm run build
 
 # Expose port and run server
 EXPOSE 3000
-CMD ["node", "dist/index.js"]
+CMD ["node", "dist/server.js"]

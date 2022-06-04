@@ -10,7 +10,7 @@
    [ring.util.response :as response]))
 
 (defn check-flag [req]
-  (if (= (request/body-string req) (System/getenv "FLAG"))
+  (if (= (request/body-string req) (slurp "flag.txt"))
     {:status 200 :body "yes"}
     {:status 400 :body "no"}))
 

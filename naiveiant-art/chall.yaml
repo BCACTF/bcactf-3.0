@@ -9,7 +9,7 @@ description: |-
 files:
   - src: src.zip
 authors:
-  - skyskycally
+  - skysky
 visible: true
 deploy:
   web:

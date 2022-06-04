@@ -1,0 +1,22 @@
+name: Bloodthirsty Breeze
+categories:
+  - webex
+value: 175
+flag:
+  file: ./flag.txt
+description: |-
+  Why Bahama Breeze when you can Bloodthirsty Breeze?
+
+  The Bloodthirty Breeze awaits.
+hints:
+  - Take a close at those queries.
+files:
+  - src: ./bloodthirsty-breeze.zip
+authors:
+  - skysky
+  - anli
+deploy:
+  web:
+    build: .
+    expose: 3000/tcp
+visible: true

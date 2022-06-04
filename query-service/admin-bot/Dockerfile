@@ -1,4 +1,5 @@
 FROM --platform=linux/amd64 node:16
+WORKDIR /usr/src/app
 
 RUN apt-get update -y \
     && apt-get install -y wget gnupg \
@@ -8,7 +9,6 @@ RUN apt-get update -y \
     && apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 \
     --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
-WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm ci \
     # Add user so we don't need --no-sandbox.
@@ -18,10 +18,6 @@ RUN npm ci \
     && chown -R pptruser:pptruser /home/pptruser \
     && chown -R pptruser:pptruser /usr/src/app
 
-WORKDIR /usr/src/app/node_modules/puppeteer
-RUN npm run install
-
-WORKDIR /usr/src/app
 COPY . .
 RUN npm run build --if-present
 

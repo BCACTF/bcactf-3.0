@@ -11,31 +11,40 @@ export default async function nominateArtwork(url: string, instanceid: string): 
 
     const page = await browser.newPage();
     
-    await page.setCookie({
-        name: "cookie",
-        value: encodeURIComponent(admin_panel_creds.cookiePassword),
-        domain: "0.0.0.0:3000",
-        path: "/",
-    });
+    try {
+        await page.setCookie({
+            name: "cookie",
+            value: encodeURIComponent(admin_panel_creds.cookiePassword),
+            domain: "0.0.0.0:3000",
+            path: "/",
+        });
 
-    await page.goto(`http://0.0.0.0:5000/${instanceid}/internal_transfer_html_url`);
-    
-    await new Promise(res => setTimeout(() => res(null), 3000));
+        await page.goto(`http://0.0.0.0:5000/${instanceid}/internal_transfer_html_url`);
 
-    // page.deleteCookie({
-    //     name: "cookie",
-    //     domain: "0.0.0.0:3000",
-    //     path: "/",
-    // });
+        await new Promise(res => setTimeout(() => res(null), 3000));
 
-    await page.evaluate(`window.url = ${JSON.stringify(url)}`);
+        // page.deleteCookie({
+        //     name: "cookie",
+        //     domain: "0.0.0.0:3000",
+        //     path: "/",
+        // });
 
-    // eslint-disable-next-line
-    // @ts-ignore
-    await page.$eval("#target", el => (el as HTMLIFrameElement).src = window.url);
+        await page.evaluate(`window.url = ${JSON.stringify(url)}`);
 
-    // await new Promise(res => setTimeout(() => res(null), 30000));
+        // eslint-disable-next-line
+        // @ts-ignore
+        await page.$eval("#target", el => (el as HTMLIFrameElement).src = window.url);
 
-    // await browser.close();
+        // await new Promise(res => setTimeout(() => res(null), 30000));
+
+        
+    } catch (e) {
+        await page.close();
+        await browser.close();
+        throw e;
+    }
+
+    await page.close();
+    await browser.close();
 }
 
