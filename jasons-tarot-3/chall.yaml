@@ -10,7 +10,7 @@ hints:
 files:
   - src: ./server/public.pem
     dest: pubkey.pem
-  -src: ./server/index.js
+  - src: ./server/index.js
     dest: server.js
   -src: ./server/package.json
     dest: package.json
