@@ -6,6 +6,8 @@ flag:
   file: ./flag.txt
 description: |-
   How far can you go with just one overflow?
+hints:
+  - Make sure not to fall to these [common mistakes](https://ropemporium.com/guide.html#Common%20pitfalls)
 deploy:
   nc:
     expose: 9999/tcp

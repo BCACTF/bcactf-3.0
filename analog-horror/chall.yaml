@@ -1,7 +1,7 @@
 name: Analog Horror
 categories:
   - foren
-value: 175
+value: 250
 flag: bcactf{time_to_get_fined_by_the_fcc_0JIBKejZdfEknGQkRcPxCg}
 description: |-
   Hey, you know all those EAS scenarios on YouTube? Why don't I try making my own?
@@ -19,6 +19,7 @@ description: |-
 hints:
   - "*SCREECH* *SCREECH* *SCREECH*"
   - There's a reason why this is frowned upon by the government.
+  - "[https://en.wikipedia.org/wiki/Specific_Area_Message_Encoding](https://en.wikipedia.org/wiki/Specific_Area_Message_Encoding)"
 files:
   - src: ./fake-alert.wav
 authors:
