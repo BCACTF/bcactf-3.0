@@ -14,7 +14,10 @@ files:
     dest: server.js
   - src: ./server/package.json
     dest: package.json
-
+deploy:
+  web:
+    build: .
+    expose: 6502
 authors:
   - Zsofia Gordon
 visible: true
