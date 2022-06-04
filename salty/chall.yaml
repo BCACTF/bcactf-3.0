@@ -12,4 +12,7 @@ hints:
 authors:
   - Zsofia Gordon
 visible: true
-# TODO: deploy
+deploy:
+  web:
+    build: .
+    expose: 80/tcp
