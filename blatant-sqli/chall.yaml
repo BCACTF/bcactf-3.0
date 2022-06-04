@@ -6,6 +6,8 @@ flag:
   file: flag.txt
 description: |-
   blah blah blah something something yusuf are you happy now
+
+  **Addendum:** The flag is all lowercase.
 hints:
   - What kind of feedback does the server give?
 files:

@@ -7,7 +7,6 @@ let flag = try! String(contentsOfFile: "flag.txt")
 let db: Connection = {
     let db = try! Connection(":memory:")
     try! db.run("CREATE TABLE flags (flag TEXT)")
-    try! db.run("PRAGMA case_sensitive_like = true")
     try! db.run("INSERT INTO flags VALUES ('\(flag)')")
     return db
 }()
