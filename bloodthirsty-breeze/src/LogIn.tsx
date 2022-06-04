@@ -31,7 +31,8 @@ function LogIn() {
             },
             body,
         }).then(response => {
-            if (response.ok) navigator("/landing");
+            if (response.ok) navigator("/menu");
+            else if (response.status >= 500) alert("Internal Server Error!");
             else setInvalidUnamePass(true);
         });
     };

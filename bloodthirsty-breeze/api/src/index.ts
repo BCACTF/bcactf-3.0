@@ -5,17 +5,61 @@ import { Database } from "sqlite3";
 import { randomBytes } from "crypto";
 import menu from "./menu";
 import { readFileSync } from "fs";
+import cookieParser from "cookie-parser";
 
 const flag = readFileSync("./flag.txt", "utf8");
 
-const db = new Database(":memory:");
-db.exec("CREATE TABLE users (username TEXT, password TEXT);");
-db.exec("CREATE TABLE auth_tokens (token TEXT, username TEXT);")
-db.exec("CREATE TABLE failed_logins (username TEXT, password TEXT);");
+const databases = new Map<string, Database>();
+
+const authTokens = new Map<string, string>();
 
 const server = initExpress();
 
-function reportError(res: Response, err: any) {
+
+const idTimeoutMillis = 10 * 60 * 1000;
+const newDatabase = async (): Promise<string> => {
+    let id: string;
+    do {
+        id = randomBytes(32).toString('base64');
+    } while (databases.has(id));
+
+    const db = new Database(`:memory:`);
+
+    await Promise.all([
+        new Promise(
+            (res, rej) => db.exec(
+                "CREATE TABLE users (username TEXT, password TEXT);",
+                (err) => err ? rej(err) : res(undefined)
+            )
+        ),
+        new Promise(
+            (res, rej) => db.exec(
+                "CREATE TABLE failed_logins (username TEXT, password TEXT);",
+                (err) => err ? rej(err) : res(undefined)
+            )
+        ),
+    ]);
+
+    databases.set(id, db);
+
+    console.log(`Successfully created database for id \`${id}\``);
+
+    setTimeout(async () => {
+
+        try {
+            await new Promise((rej, res) => db.close(e => e ? rej(e) : res(undefined)));
+            databases.delete(id);
+            console.log(`Successfully killed database for id \`${id}\``);
+        } catch (e) {
+            console.error(e);
+            console.log(`Failed while killing database for id \`${id}\``);
+        }
+    }, idTimeoutMillis);
+
+    return id;
+};
+
+const reportError = (res: Response, err: any) => {
     const messages = [
         '*angry whooshing noises*',
         'The Bloodthirty Breeze is disappointed at your inability to not cause an error.',
@@ -25,8 +69,22 @@ function reportError(res: Response, err: any) {
     res.send(messages[Math.floor(Math.random() * messages.length)]);
 }
 
-server.post("/api/login", json(), dataTypeMiddleware(loginType), async (req, res) => {
+server.post("/api/login", cookieParser(), json(), dataTypeMiddleware(loginType), async (req, res) => {
     try {
+        let id = req.cookies.id;
+        if (!databases.has(id)) {
+            id = await newDatabase();
+            res.cookie("id", id, {
+                expires: new Date(new Date().getTime() + idTimeoutMillis),
+            });
+        }
+
+        const db = databases.get(id);
+        if (!db) {
+            res.cookie("id", undefined);
+            throw new TypeError(`Failed to find DB in databases database at id \`${id}\`!`);
+        }
+
         const body: loginType = req.body;
         const {username, password} = body;
 
@@ -50,15 +108,7 @@ server.post("/api/login", json(), dataTypeMiddleware(loginType), async (req, res
         if (users.length > 0) {
             // Login succeeded, generate an auth token, set the cookie, and return a response
             const token = randomBytes(32).toString('base64');
-            await new Promise<void>((resolve, reject) => {
-                db.exec(`INSERT INTO auth_tokens VALUES ('${token}', '${username}');`, err => {
-                    if (err) {
-                        reject(err);
-                    } else {
-                        resolve();
-                    }
-                });
-            });
+            authTokens.set(token, username);
             res.cookie('auth', token);
             res.send("Log in successful! You are now authorized to access the menu.");
         } else {
@@ -80,8 +130,12 @@ server.post("/api/login", json(), dataTypeMiddleware(loginType), async (req, res
     }
 });
 
-server.get("/api/menu", async (req, res) => {
+server.get("/api/menu", cookieParser(), async (req, res) => {
     try {
+        if (!databases.has(req.cookies.id)) res.cookie("id", await newDatabase(), {
+            expires: new Date(new Date().getTime() + idTimeoutMillis),
+        });
+
         if (!req.cookies.auth) {
             res.status(401);
             res.send(
@@ -90,21 +144,9 @@ server.get("/api/menu", async (req, res) => {
         }
 
         const authToken = req.cookies.auth;
-        const users = await new Promise<unknown[]>((resolve, reject) => {
-            db.all(
-                `SELECT * FROM auth_tokens WHERE token = ?;`, [authToken],
-                (err, rows) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(rows);
-                }
-            });
-        });
-
-        if (users.length > 0) {
-            const result = [...menu];
-            result[Math.floor(Math.random() * result.length)].description = flag;
+        if (authTokens.has(authToken)) {
+            const randIndex = Math.floor(Math.random() * menu.length);
+            const result = menu.map((item, i) => ({ ...item, description: i === randIndex ? flag : item.description }));
             res.json(result);
         } else {
             res.status(401);

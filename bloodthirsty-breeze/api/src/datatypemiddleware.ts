@@ -29,6 +29,10 @@ export const validateType = (body: unknown, targetType: DataType): boolean => {
             if (targetType === _number) return true;
             else break;
 
+        case "string":
+            if (targetType === _string) return true;
+            else break;
+
         case "object":
             if (body === null) {
                 if (targetType === _null) return true;
