@@ -1,0 +1,26 @@
+name: Analog Horror
+categories:
+  - foren
+value: 150
+flag: bcactf{time_to_get_fined_by_the_fcc_0JIBKejZdfEknGQkRcPxCg}
+description: |-
+  Hey, you know all those EAS scenarios on YouTube? Why don't I try making my own?
+
+  [obligatory volume warning]
+
+  Credit where credit's due:
+
+  en:User:Denelson83, CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons
+
+  Epic Cinematic Gaming Cyberpunk | RESET by Alex-Productions | https://www.youtube.com/channel/UCx0_M61F81Nfb-BRXE-SeVA
+  Music promoted by https://www.free-stock-music.com
+  Creative Commons Attribution 3.0 Unported License
+  https://creativecommons.org/licenses/by/3.0/deed.en_US
+hints:
+  - "*SCREECH* *SCREECH* *SCREECH*"
+  - There's a reason why this is frowned upon by the government.
+files:
+  - src: ./fake-alert.wav
+authors:
+  - anli
+visible: true
