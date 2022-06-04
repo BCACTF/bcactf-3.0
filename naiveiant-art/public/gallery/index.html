@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaiveiantArt - Gallery</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS";
+            color: white;
+            overflow: scroll;
+            background-color: brown;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        div {
+            color: rgb(150, 150, 0);
+            display: flex;
+            width: 90vw;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid fuchsia;
+            background-color: aqua;
+        }
+        img {
+            height: 50vh;
+        }
+
+    </style>
+    <script>
+        function bodyLoaded() {
+            document.getElementById("submit").onclick = () => {
+                const url = document.getElementById("report_artwork").value;
+                fetch(`/%%INSTANCEID%%/nominate?url=${encodeURIComponent(url)}`, { method: "POST" }).then(() => alert("Artwork nomination submitted!"));
+            }
+        }
+
+    </script>
+</head>
+<body onload="bodyLoaded()">
+    <h1>Gallery</h1>
+    %%CONTENT_GOES_HERE%%
+    <div>Nominate an artwork for award (enter URL) <input id="report_artwork" type="text" /></div>
+    <input id="submit" type="submit" />
+</body>
+</html>

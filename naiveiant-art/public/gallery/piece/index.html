@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaiveiantArt - Piece</title>
+    <script>
+        // Someone remind me to go back and make this code less bad.
+
+        // I hate callbacks though so async await it is obviously better.
+
+        class OnMessageAsync {
+            /**
+             * @type {Promise<MessageEvent<any>>}
+             */
+            #promise;
+
+            /**
+             * @type {(val: MessageEvent<any>>) => void}
+             */
+            #res;
+
+
+            constructor() {
+                this.#generateNewPromise();
+            }
+
+            #generateNewPromise() {
+                this.#promise = new Promise((res, rej) => this.#res = res);
+            }
+
+            [Symbol.asyncIterator]() {
+                const self = this;
+
+                window.addEventListener("message", (event) => self.#res(event));
+
+                return {
+                    next: async () => {
+                        let message = await self.#promise;
+                        self.#generateNewPromise();
+                        return {
+                            value: message,
+                            done: false,
+                        };
+                    }
+                };
+            }
+        }
+
+        (async () => {
+            const messageAsync = new OnMessageAsync();
+            for await (messageMaybeValid of messageAsync) {
+                if (messageMaybeValid.data === "send gallery image") {
+                    break;
+                }
+            }
+
+            window.parent.window.postMessage({
+                imageData: document.getElementById("image").src,
+                title: title,
+            });
+
+            console.log("YAYYYYYYY");
+
+        })();
+    </script>
+
+    <style>
+        body {
+            font-family: "Comic Sans MS";
+            color: blue;
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+        }
+        div {
+            color: rgb(255, 255, 0);
+            display: flex;
+            width: 90vw;
+            height: 85vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid orange;
+            background-color: brown;
+        }
+        img {
+            height: 50vh;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Single Art Piece Display</h1>
+    %%CONTENT_GOES_HERE%%
+</body>
+</html>
