@@ -19,5 +19,5 @@ deploy:
     build: .
     expose: 9999/tcp
 authors:
-  - Sky Calaman
+  - skysky
 visible: true
