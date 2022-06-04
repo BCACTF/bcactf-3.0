@@ -1,7 +1,7 @@
 name: "BCACTF 3.0: The Movie"
 categories:
   - foren
-value: 150
+value: 175
 flag: bcactf{im_sorry_1l11l1l1l11l}
 description: |-
   A terrible movie remake of BCACTF? What's not to like?!
