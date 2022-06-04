@@ -17,8 +17,7 @@ files:
 deploy:
   web:
     build: .
-    expose: 6502
+    expose: 6502/tcp
 authors:
   - Zsofia Gordon
 visible: true
-# TODO: deploy
