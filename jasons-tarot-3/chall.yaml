@@ -12,6 +12,8 @@ files:
     dest: pubkey.pem
   -src: ./server/index.js
     dest: server.js
+  -src: ./server/package.json
+    dest: package.json
 
 authors:
   - Zsofia Gordon
