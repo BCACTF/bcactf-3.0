@@ -1,0 +1,19 @@
+name: Jason's Tarot 3
+categories:
+  - webex
+value: 225
+flag: bcactf{r5a_can_b3_c0nfu51ng_13o30}
+description: |-
+  Jason has just about had enough. You've outsmarted him 3 times and he is sure that you won't get past him this time. So try it if you can!
+hints:
+  - Jason finds this kind of web security very *confusing*
+files:
+  - src: ./server/public.pem
+    dest: pubkey.pem
+  -src: ./server/index.js
+    dest: server.js
+
+authors:
+  - Zsofia Gordon
+visible: true
+# TODO: deploy
