@@ -7,6 +7,8 @@ description: |-
   A terrible movie remake of BCACTF? What's not to like?!
 hints:
   - The trailer's all black... or is it?
+  - What's in the video that isn't in other videos?
+  - What's special about the codec?
 files:
   - src: ./trailer.mov
 authors:
