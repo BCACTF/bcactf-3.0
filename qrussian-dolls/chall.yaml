@@ -9,6 +9,7 @@ description: |-
 hints:
   - QR codes don't have to contain just text...
   - Make sure the flag format is followed.
+  - Letters tend to be towards the lower right of the images.
 files:
   - src: ./chall.jpg
 authors:
