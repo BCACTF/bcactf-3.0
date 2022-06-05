@@ -1,7 +1,7 @@
 name: Ode to a Replaced Cable
 categories:
   - foren
-value: 175
+value: 350
 flag: bcactf{a-universal-language-b49a}
 # Alternatively:
 # flag:
@@ -27,8 +27,10 @@ hints:
   - I mean it, there's actually nothing to analyze with the buzzing.
   - STOP ANALYZING THE BUZZING
   - I really hope that saying about music being a universal language is true! Because I have no intention to learn French. 
+  - Consider various ways of describing the music in hint.mp3...
 files:
   - src: ./ode-to-a-cable.mp3
+  - src: ./hint.mp3
 authors:
   - eiis1000
 visible: true
