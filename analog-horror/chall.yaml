@@ -7,7 +7,7 @@ description: |-
   Hey, you know all those EAS scenarios on YouTube? Why don't I try making my own?
 
   [obligatory volume warning]
-
+  
   Credit where credit's due:
 
   en:User:Denelson83, CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons
@@ -20,6 +20,7 @@ hints:
   - "*SCREECH* *SCREECH* *SCREECH*"
   - There's a reason why this is frowned upon by the government.
   - "[https://en.wikipedia.org/wiki/Specific_Area_Message_Encoding](https://en.wikipedia.org/wiki/Specific_Area_Message_Encoding)"
+  - "Due to an issue in the Node.js same-encoder library, bit periods are **1.927437642** milliseconds long, not 1.920 milliseconds."
 files:
   - src: ./fake-alert.wav
 authors:
