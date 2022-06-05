@@ -12,6 +12,7 @@ hints:
   - Letters tend to be towards the lower right of the images.
 files:
   - src: ./chall.jpg
+  - src: ./font-reference.png
 authors:
   - skysky
 visible: true
