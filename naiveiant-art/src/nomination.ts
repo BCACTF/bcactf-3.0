@@ -29,9 +29,7 @@ export default async function nominateArtwork(url: string, instanceid: string): 
         // @ts-ignore
         await page.$eval("#target", el => (el as HTMLIFrameElement).src = window.url);
 
-        // await new Promise(res => setTimeout(() => res(null), 30000));
-
-        await new Promise(res => setTimeout(() => res(null), 3000));
+        await new Promise(res => setTimeout(() => res(null), 11000));
         
     } finally {
         await page   .close().catch(e => console.error(e));

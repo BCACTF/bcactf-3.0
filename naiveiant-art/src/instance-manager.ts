@@ -1,5 +1,5 @@
 import { createHash } from "crypto";
-import { Request } from "express";
+import { Request, Response } from "express";
 import { rmSync, mkdirSync } from "fs";
 import { mkdir, rm, writeFile } from "fs/promises";
 import { inspect as utilInspect, InspectOptionsStylized } from "util";
@@ -190,13 +190,14 @@ export const createInstance = (req: Request): [string, EventTarget] => {
     return [id.toString(16).padStart(idPadLen, "0"), dirCreationTarget];
 };
 
-const instanceMiddleware = (req: Request, _: unknown, next: (e?: Error) => void) => {
+const instanceMiddleware = (req: Request, res: Response, next: (e?: Error) => void) => {
     try {
         
         const targetInstance = (() => {
             try {
                 return BigInt(`0x${req.params.instanceid}`);
             } catch (e) {
+                res.status(400).send("Invalid instance format!");
                 throw new Error("Invalid instance format!");
             }
         })();
