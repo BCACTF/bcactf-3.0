@@ -2,7 +2,7 @@ name: Jason's Tarot 3
 categories:
   - webex
 value: 225
-flag: bcactf{r5a_can_b3_c0nfu51ng_13o30}
+flag: bcactf{w3_d3f1n3tly_d1dnt_h4v3_t0_ch4ng3_th1s_101010101010}
 description: |-
   Jason has just about had enough. You've outsmarted him 3 times and he is sure that you won't get past him this time. So try it if you can!
 hints:
@@ -10,7 +10,7 @@ hints:
 files:
   - src: ./server/public.pem
     dest: pubkey.pem
-  - src: ./server/index.js
+  - src: ./provided.js
     dest: server.js
   - src: ./server/package.json
     dest: package.json
@@ -20,4 +20,4 @@ deploy:
     expose: 6502/tcp
 authors:
   - Zsofia Gordon
-visible: true
+visible: false

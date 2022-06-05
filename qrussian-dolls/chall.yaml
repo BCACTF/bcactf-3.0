@@ -5,7 +5,7 @@ categories:
 value: 150
 flag: bcactf{n0t_babu5hk@_d011s}
 description: |-
-  My russian nesting dolls seem to have hopped on the hype train of QR codes... a little bit after they were cool. Anyway, can you help retrieve the message they're trying to send me? (Do BCAPNG first!)
+  My Russian nesting dolls seem to have hopped on the hype train of QR codes... a little bit after they were cool. Anyway, can you help retrieve the message they're trying to send me? (Do BCAPNG first!)
 hints:
   - QR codes don't have to contain just text...
   - Make sure the flag format is followed.

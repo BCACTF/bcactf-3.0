@@ -11,7 +11,7 @@ files:
   - src: Dockerfile
 authors:
   - skysky
-visible: true
+visible: false
 deploy:
   web:
     build: .
