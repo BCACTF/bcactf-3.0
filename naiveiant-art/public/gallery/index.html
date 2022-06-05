@@ -36,10 +36,14 @@
         function bodyLoaded() {
             document.getElementById("submit").onclick = () => {
                 const url = document.getElementById("report_artwork").value;
-                fetch(`/%%INSTANCEID%%/nominate?url=${encodeURIComponent(url)}`, { method: "POST" }).then(() => alert("Artwork nomination submitted!"));
+                fetch(
+                    `/%%INSTANCEID%%/nominate?url=${encodeURIComponent(url)}`,
+                    { method: "POST" },
+                ).then(
+                    async res => res.ok ? alert("Artwork nomination submitted!") : alert(`Nomination Failed:\n${await res.text()}`)
+                );
             }
         }
-
     </script>
 </head>
 <body onload="bodyLoaded()">

@@ -12,23 +12,16 @@ export default async function nominateArtwork(url: string, instanceid: string): 
 
     const page = await browser.newPage();
     
-    try {
-        await page.setCookie({
-            name: "cookie",
-            value: encodeURIComponent(admin_panel_creds.cookiePassword),
-            domain: "0.0.0.0:3000",
-            path: "/",
-        });
+    page
+        .on("pageerror",     (err)       => console.log(err      ))
+        .on("console",       (log)       => console.log(log      ))
+        .on("response",      (resp)      => console.log(resp     ))
+        .on("requestfailed", (failedReq) => console.log(failedReq));
 
+    try {
         await page.goto(`http://0.0.0.0:5000/${instanceid}/internal_transfer_html_url`);
 
         await new Promise(res => setTimeout(() => res(null), 3000));
-
-        // page.deleteCookie({
-        //     name: "cookie",
-        //     domain: "0.0.0.0:3000",
-        //     path: "/",
-        // });
 
         await page.evaluate(`window.url = ${JSON.stringify(url)}`);
 
@@ -40,13 +33,9 @@ export default async function nominateArtwork(url: string, instanceid: string): 
 
         await new Promise(res => setTimeout(() => res(null), 3000));
         
-    } catch (e) {
-        await page.close();
-        await browser.close();
-        throw e;
+    } finally {
+        await page   .close().catch(e => console.error(e));
+        await browser.close().catch(e => console.error(e));
     }
-
-    await page.close();
-    await browser.close();
 }
 

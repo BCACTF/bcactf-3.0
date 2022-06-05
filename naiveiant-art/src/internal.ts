@@ -2,12 +2,15 @@ import expressBuilder from "express";
 import instanceMiddleware from "./instance-manager";
 import { readFileSync } from "fs";
 import { readFile } from "fs/promises";
+import cors from "cors";
 
 const admin_panel_creds = JSON.parse(readFileSync("private_data/secret_admin_panel_creds.json", { encoding: "utf-8" })).cookiePassword;
 
 const server = expressBuilder();
 
-server.get("/:instanceid/internal_transfer_html_url", instanceMiddleware, async (req, res) => {
+server.get("/:instanceid/internal_transfer_html_url", cors({
+    origin: "http://0.0.0.0:5000",
+}), instanceMiddleware, async (req, res) => {
     try {
         const raw_file = await readFile("persistent_data/nominationpage.html", { encoding: "utf-8" });
 

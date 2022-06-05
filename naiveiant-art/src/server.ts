@@ -29,8 +29,6 @@ server.get("/:instanceid/gallery", instanceMiddleware, async (req, res) => {
     try {
         const escaped = true;
 
-        console.log(req.params.instanceid);
-
         const [gallery_html, data_json] = await Promise.all([
             readFile("public/gallery/index.html", { encoding: "utf-8" }),
             readFile(`data/${req.params.instanceid}/art_pieces.json`, { encoding: "utf-8" }).then(JSON.parse),
