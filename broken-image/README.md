@@ -1,0 +1,2 @@
+# Broken Image (Foren, 50 points)
+The image cannot be opening in any regular photo editor or svg viewer. Opening it in a hex editor reveals that it is actually a png image instead of an svg, so changing the file extension to .png fixes the problem and it can now be opened in any regular image viewer.
