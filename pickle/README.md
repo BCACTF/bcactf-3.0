@@ -1,0 +1,4 @@
+# Pickles (Rev, 150 points)
+Opening the file makes it clear that this is some sort of serialized/binary file. However, it is not exactly a pickled object, which can be seen after there is an `UnpicklingError` when trying to load the file using the `pickle` library. In this case, another related library, `marshal` is helpful for deserializing the object. After loading it with `marshal`, it becomes a bytes object, which still is not readable or usable Python code. After loading it with `marshal` *again*, it then gets executed. Using the `inspect` library, we can get the source code of this Python function instead of running it. We can then reverse/execute the source code to get the flag.
+
+[Solvescript](./decrypt.py)
